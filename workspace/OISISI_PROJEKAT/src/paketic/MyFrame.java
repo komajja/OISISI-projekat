@@ -19,14 +19,17 @@ public class MyFrame extends JFrame{
 	setTitle("Animacija");
 	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	setLocationRelativeTo(null);
+	
+	MyMenuBar menu = new MyMenuBar();
+	this.setJMenuBar(menu);
+	
 	setVisible(true);
 	
 //	JPanel panel = new JPanel();
 //	panel.setBackground(Color.BLUE);
 //	this.add(panel);
 	
-	MyMenuBar menu = new MyMenuBar();
-	this.setJMenuBar(menu);
+	
 	
 	
 	}
