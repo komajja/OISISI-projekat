@@ -1,10 +1,17 @@
 package paketic;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
+import javax.swing.Box;
+import javax.swing.BoxLayout;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 
@@ -23,14 +30,27 @@ public class MyFrame extends JFrame{
 	MyMenuBar menu = new MyMenuBar();
 	this.setJMenuBar(menu);
 	
+	JPanel panel = new JPanel();
+	panel.setBackground(Color.BLUE);
+	panel.setLayout(new BorderLayout());
+	this.add(panel, BorderLayout.CENTER);
+	
+	MyToolbar toolbar = new MyToolbar();
+	panel.add(toolbar, BorderLayout.SOUTH);
+	
+	MyStatusBar statusbar = new MyStatusBar();
+	statusbar.setPreferredSize(new Dimension(this.getWidth(), 20));
+	this.add(statusbar, BorderLayout.SOUTH);
+	statusbar.setLayout(new BoxLayout(statusbar,BoxLayout.LINE_AXIS));
+	Date date = new Date();
+	DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+    String today = formatter.format(date);
+	JLabel dateLabel = new JLabel(today);
+	statusbar.add(Box.createHorizontalGlue());
+	statusbar.add(dateLabel);
+	statusbar.add(Box.createRigidArea(new Dimension(5,0)));
+	
 	setVisible(true);
-	
-//	JPanel panel = new JPanel();
-//	panel.setBackground(Color.BLUE);
-//	this.add(panel);
-	
-	
-	
 	
 	}
 	
