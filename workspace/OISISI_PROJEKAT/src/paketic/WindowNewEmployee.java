@@ -9,6 +9,10 @@ import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+<<<<<<< Updated upstream
+=======
+import javax.swing.JComboBox;
+>>>>>>> Stashed changes
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -126,6 +130,7 @@ public class WindowNewEmployee extends JFrame {
 	        panPanel.add(txtAdressCity);
 	        panPanel.add(Box.createRigidArea(new Dimension(50,0)));
 	        
+<<<<<<< Updated upstream
 	        //SOFTVERI check box
 	        JLabel lblSoftware=new JLabel ("Choose software:");
 	        lblSoftware.setPreferredSize(dim);
@@ -157,6 +162,49 @@ public class WindowNewEmployee extends JFrame {
 			panPanel.add(lblJobs);
 			panPanel.add(radBtn1);
 			panPanel.add(radBtn2);
+=======
+	        //SOFTVERI dropdown menu
+	        JLabel lblSoftware=new JLabel ("Choose a software:");
+	        lblSoftware.setPreferredSize(dim);
+	       	          
+	        String[] softveri= {"Software 1","Software 2","Software 3","Software 4","Software 5"};
+	        JComboBox<String> cb1=new JComboBox<String>(softveri);
+	        
+	        cb1.setVisible(true);
+	        
+//	        JCheckBox checkBox1=new JCheckBox("software1");
+//	        JCheckBox checkBox2=new JCheckBox("software2");
+//	        JCheckBox checkBox3=new JCheckBox("software3");
+	        
+	        panPanel.add(lblSoftware);
+	        panPanel.add(cb1);
+//	        panPanel.add(checkBox1);
+//	        panPanel.add(checkBox2);
+//	        panPanel.add(checkBox3);
+//	        panPanel.add(Box.createRigidArea(new Dimension(300,0)));
+	        
+	        
+	        //RADNO MESTO dropdown
+	        JLabel lblJobs=new JLabel ("Choose a job:");
+	        lblJobs.setPreferredSize(dim);
+	        
+	        String[] poslovi = { "CHOICE 1","CHOICE 2", "CHOICE 3","CHOICE 4","CHOICE 5","CHOICE 6"};
+	        JComboBox<String> cb = new JComboBox<String>(poslovi);
+
+	        cb.setVisible(true);
+	        
+//	        JRadioButton radBtn1 = new JRadioButton("Job 1");
+//			JRadioButton radBtn2 = new JRadioButton("Job 2");
+			
+//			ButtonGroup btnGroupJob = new ButtonGroup();
+//			btnGroupJob.add(radBtn1);
+//			btnGroupJob.add(radBtn2);
+			
+			panPanel.add(lblJobs);
+	        panPanel.add(cb);
+//			panPanel.add(radBtn1);
+//			panPanel.add(radBtn2);
+>>>>>>> Stashed changes
 	        //
 	        
 	        panCenter.add(panPanel);
