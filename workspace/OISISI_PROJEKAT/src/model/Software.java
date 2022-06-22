@@ -1,24 +1,38 @@
 package model;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
+import baza.BazaSoftware;
+
 public class Software {
+	
+	
 	private long id;		//NOVO
 	private String naziv;
-	private List<Brush> cetkice = new ArrayList<Brush>();
-	private String modifikator;
+	private List<Brush> cetkice;
+	private List<String> modifikatori;
 	private String fajlFormat;
-	private List<String> animationTool = new ArrayList<String>();;
-	private Render render;
+	private List<String> animationTool;
+	private List<Render> render;
 
-	
-	public Software(long id, String naziv, List<Brush> cetkica, String modifikator, String fajlFormat, List<String>  animationTool, Render render) {
+	public Software(long id, String naziv, List<Brush> cetkice, List<String> modifikatori, String fajlFormat, List<String>  animationTool, List<Render> render) {
 		super();
 		this.id = id;		//NOVO KAO I PRVI ARGUMENT 
 		this.naziv = naziv;
 		this.cetkice = cetkice;
-		this.modifikator = modifikator;
+		this.modifikatori = modifikatori;
+		this.fajlFormat = fajlFormat;
+		this.animationTool = animationTool;
+		this.render = render;
+	}
+	
+	public Software(String naziv, List<Brush> cetkice, List<String> modifikatori, String fajlFormat, List<String>  animationTool, List<Render> render) {
+		super();
+		this.naziv = naziv;
+		this.cetkice = cetkice;
+		this.modifikatori = modifikatori;
 		this.fajlFormat = fajlFormat;
 		this.animationTool = animationTool;
 		this.render = render;
@@ -43,17 +57,17 @@ public class Software {
 	public List<Brush> getCetkice() {
 		return cetkice;
 	}
+	
 	public void setCetkice(List<Brush> cetkice) {
 		this.cetkice = cetkice;
 	}
 	
-	//
-	public String getModif() {
-		return modifikator;
+	public List<String> getModif() {
+		return modifikatori;
 	}
 
-	public void setModif(String modifikator) {
-		this.modifikator = modifikator;
+	public void setModif(List<String> modifikatori) {
+		this.modifikatori = modifikatori;
 	}
 	
 	public String getFFormat() {
@@ -71,17 +85,12 @@ public class Software {
 		this.animationTool = animationTool;
 	}
 	
-	public Render getRenderl() {
+	public List<Render> getRenders() {
 		return render;
 	}
 
-	public void setRender(Render render) {
+	public void setRenders(List<Render> render) {
 		this.render = render;
 	}
-
 	
-	
-	
-	
-
 }

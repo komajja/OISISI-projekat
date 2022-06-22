@@ -1,6 +1,7 @@
 package model;
 
-import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Employee {
 
@@ -8,19 +9,31 @@ public class Employee {
 	private String ime;
 	private String prezime;
 	private String jmbg;
-	private LocalDate datumRodjenja;
+	private List<String> datumRodjenja = new ArrayList<String>();
 	private String email;
 	private Adress adresa;
-	private Software softver;
+	private List<Software> softver;
 	private String radnoMesto;
 	
 	public Employee() {
 		super();
 	}
 	
-	public Employee(long id, String ime, String prezime, String jmbg, LocalDate datumRodjenja, String email, Adress adresa, Software softver, String radnoMesto) {
+	public Employee(long id, String ime, String prezime, String jmbg, List<String> datumRodjenja, String email, Adress adresa, List<Software> softver, String radnoMesto) {
 		super();
 		this.id = id;		//NOVO KAO I PRVI ARGUMENT 
+		this.ime = ime;
+		this.prezime = prezime;
+		this.jmbg = jmbg;
+		this.datumRodjenja = datumRodjenja;
+		this.email = email;
+		this.adresa = adresa;
+		this.softver = softver;
+		this.radnoMesto=radnoMesto;
+		}
+	
+	public Employee(String ime, String prezime, String jmbg, List<String> datumRodjenja, String email, Adress adresa, List<Software> softver, String radnoMesto) {
+		super();
 		this.ime = ime;
 		this.prezime = prezime;
 		this.jmbg = jmbg;
@@ -63,13 +76,14 @@ public void setJmbg(String jmbg) {
 	this.jmbg = jmbg;
 }
 
-public LocalDate getDatumRodjenja() {
+public List<String> getDatumRodjenja() {
 	return datumRodjenja;
 }
 
-public void setDatumRodjenja(LocalDate datumRodjenja) {
+public void setDatumRodjenja(List<String> datumRodjenja) {
 	this.datumRodjenja = datumRodjenja;
 }
+
 
 public String getEmail() {
 	return email;
@@ -88,11 +102,11 @@ public void setAdresa(Adress adresa) {
 	this.adresa = adresa;
 }
 
-public Software getSoftver() {
+public List<Software> getSoftver() {
 	return softver;
 }
 
-public void setSoftver(Software softver) {
+public void setSoftver(List<Software> softver) {
 	this.softver = softver;
 }
 

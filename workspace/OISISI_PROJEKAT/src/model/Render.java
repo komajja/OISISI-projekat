@@ -1,25 +1,33 @@
 package model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Render {
 	
 	private long id;
 	private String naziv;
-	private List<String> materijali = new ArrayList<String>();
-	private List<String> kamera = new ArrayList<String>();
-	private String svetlo;
-	private List<String> objekat = new ArrayList<String>();;
+	private List<String> materijali;
+	private List<String> kamere;
+	private List<String> svetla;
+	private List<String> objekti;
 	
-	public Render(long id, List<String> materijali, List<String> kamera, String svetlo, List<String> objekat, String naziv) {
+	public Render(long id, String naziv, List<String> materijali, List<String> kamere, List<String> svetla, List<String> objekti) {
 		super();
 		this.id = id;
-		this.materijali = materijali;
-		this.kamera = kamera;
-		this.svetlo = svetlo;
-		this.objekat = objekat;
 		this.naziv = naziv;
+		this.materijali = materijali;
+		this.kamere = kamere;
+		this.svetla = svetla;
+		this.objekti = objekti;
+	}
+	
+	public Render(String naziv, List<String> materijali, List<String> kamere, List<String> svetla, List<String> objekti) {
+		super();
+		this.naziv = naziv;
+		this.materijali = materijali;
+		this.kamere = kamere;
+		this.svetla = svetla;
+		this.objekti = objekti;
 	}
 	
 	public long getId() {		//NOVO
@@ -38,37 +46,75 @@ public class Render {
 		this.naziv = naziv;
 	}
 	
-	public List<String> getMaterijali() {
+	public List<String> getMaterials() {
 		return materijali;
 	}
-	public void setMaterijali(List<String> materijali) {
+
+	public void setMaterials(List<String> materijali) {
 		this.materijali = materijali;
 	}
 	
-	public List<String> getKamera() {
-		return kamera;
-	}
-	public void setKamere(List<String> kamera) {
-		this.kamera = kamera;
-	}
-	
-	public String getLight() {
-		return svetlo;
+	public List<String> getCameras() {
+		return kamere;
 	}
 
-	public void setLight(String svetlo) {
-		this.svetlo = svetlo;
+	public void setCameras(List<String> kamere) {
+		this.kamere = kamere;
 	}
 	
-	public List<String> getObjekat() {
-		return objekat;
+	public List<String> getLight() {
+		return svetla;
 	}
-	public void setObjekti(List<String> objekat) {
-		this.objekat = objekat;
+
+	public void setLight(List<String> svetlo) {
+		this.svetla = svetlo;
+	}
+	
+	public List<String> getObjects() {
+		return objekti;
+	}
+
+	public void setObject(List<String> objekti) {
+		this.objekti = objekti;
 	}
 	
 	@Override
 	public String toString() {
-		return naziv + "," + materijali + "," + kamera + "," + svetlo + "," + objekat;
+		StringBuilder sb = new StringBuilder();
+		sb.append(naziv);
+		sb.append(" (");
+		for (int a = 0; a<materijali.size(); a++) {
+			String m = materijali.get(a);
+			sb.append(m);
+			if(!(a == materijali.size()-1)) {
+			sb.append(", ");
+			}
+		 }
+		sb.append("; ");
+		for (int a = 0; a<kamere.size(); a++) {
+			String c = kamere.get(a);
+			sb.append(c);
+			if(!(a == kamere.size()-1)) {
+			sb.append(", ");
+			}
+		}
+		sb.append("; ");
+		for (int a = 0; a<svetla.size(); a++) {
+			String c = svetla.get(a);
+			sb.append(c);
+			if(!(a == svetla.size()-1)) {
+			sb.append(", ");
+			}
+		}
+		sb.append("; ");
+		for (int a = 0; a<objekti.size(); a++) {
+			String o = objekti.get(a);
+			sb.append(o);
+			if(!(a == objekti.size()-1)) {
+			sb.append(", ");
+			}
+		 }
+		sb.append(" )");
+		return sb.toString();
 	}
 }

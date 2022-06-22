@@ -1,27 +1,18 @@
 package model;
 
 public class Adress {
-	
-	private long id;  //NOVO    
+	  
 	private String Ulica;
-	private int Broj;
+	private String Broj;
 	private String Grad;
 	
-	public Adress(long id, String ulica, int broj, String grad) {
+	public Adress(String ulica, String broj, String grad) {
 		super();
-		this.id = id;		//NOVO KAO I PRVI ARGUMENT
 		this.Ulica = ulica;
 		this.Broj = broj;
 		Grad = grad;
 	}
 	
-	public long getId() {		//NOVO
-		return id;
-	}
-
-	public void setId(long id) {		//NOVO
-		this.id = id;
-	}
 	public String getUlica() {
 		return Ulica;
 	}
@@ -30,11 +21,11 @@ public class Adress {
 		this.Ulica = ulica;
 	}
 
-	public int getBroj() {
+	public String getBroj() {
 		return Broj;
 	}
 
-	public void setBroj(int broj) {
+	public void setBroj(String broj) {
 		this.Broj = broj;
 	}
 
@@ -55,6 +46,6 @@ public class Adress {
 	
 	@Override
 	public String toString() {
-		return Ulica + "," + Broj + "," + Grad ;
-	}//mozda ne treba?
+		return Ulica + ", " + Broj + ", " + Grad ;
+	}
 }
