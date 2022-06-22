@@ -10,10 +10,7 @@ import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JColorChooser;
-<<<<<<< Updated upstream
-=======
 import javax.swing.JComboBox;
->>>>>>> Stashed changes
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -29,11 +26,7 @@ public WindowNewSoftware(){
 		//DialogExample() {  
 	        JFrame f= new JFrame();  
 	        dijalogSoftware = new JDialog(f , "Software", true); 
-<<<<<<< Updated upstream
-	        dijalogSoftware.setSize(400,600);    
-=======
-	        dijalogSoftware.setSize(637,750);    
->>>>>>> Stashed changes
+	        dijalogSoftware.setSize(637,760);    
 	        
 	        JPanel panCenter=new JPanel();
 			BoxLayout boxCenter=new BoxLayout(panCenter, BoxLayout.Y_AXIS);
@@ -43,26 +36,14 @@ public WindowNewSoftware(){
 			
 			Dimension dim=new Dimension(150,20); //dim za labele i to
 			
-<<<<<<< Updated upstream
-			//NAZIV dodati da mogu samo slova
-=======
 			//NAZIV dodati da mogu samo slova I JEDINSTVENOST!!! 	
->>>>>>> Stashed changes
 			JPanel panPanel=new JPanel(new FlowLayout(FlowLayout.LEFT));
 	        JLabel lblName=new JLabel("Software name:");
 	        lblName.setPreferredSize(dim);
 
 	        JTextField txtName=new JTextField();
 	        txtName.setPreferredSize(dim);
-<<<<<<< Updated upstream
-
-	        panPanel.add(lblName);
-	        panPanel.add(txtName);
-	       			
-	        //PREZIME dodati da mogu samo slova
-=======
 	       	
->>>>>>> Stashed changes
 	        //JPanel panLastName=new JPanel(new FlowLayout(FlowLayout.LEFT));
 	        JLabel lblBrushes=new JLabel("Brushes:");
 	        lblBrushes.setPreferredSize(dim);
@@ -73,40 +54,21 @@ public WindowNewSoftware(){
 	        
 	        JTextField txtBrushesName=new JTextField();
 	        txtBrushesName.setPreferredSize(dim);
-<<<<<<< Updated upstream
-=======
 	        
->>>>>>> Stashed changes
 	        //namena
 	        JLabel lblBrushesUse=new JLabel("Use:");
 	        lblBrushesUse.setPreferredSize(dim);
 	        
-<<<<<<< Updated upstream
-	        JTextField txtBrushesUse=new JTextField();
-	        txtBrushesUse.setPreferredSize(dim);
-=======
 	        String[] namena= {"NAMENA 1","NAMENA 2","NAMENA 3","NAMENA 4",};
 	        JComboBox<String> cbNamena=new JComboBox<String>(namena);
 	        cbNamena.setVisible(true);
 	        	        
->>>>>>> Stashed changes
 	        //boja
 	        JLabel lblBrushesColor=new JLabel("Color:");
 	        lblBrushesColor.setPreferredSize(dim);
 	        
 	        JColorChooser brushColorChooser = new JColorChooser();
 	        
-<<<<<<< Updated upstream
-	        panPanel.add(lblBrushes);
-	        panPanel.add(Box.createRigidArea(new Dimension(500,0)));
-	        panPanel.add(Box.createRigidArea(new Dimension(10,0)));
-	        panPanel.add(lblBrushesName);
-	        panPanel.add(txtBrushesName);
-	        panPanel.add(Box.createRigidArea(new Dimension(500,0)));
-	        panPanel.add(Box.createRigidArea(new Dimension(10,0)));
-	        panPanel.add(lblBrushesColor);
-	        panPanel.add(brushColorChooser);
-=======
 	        //RENDER
 	        
 	        JLabel lblRender=new JLabel("Render:");
@@ -195,7 +157,6 @@ public WindowNewSoftware(){
 	        panPanel.add(Box.createRigidArea(new Dimension(10,0)));
 	        panPanel.add(lblRenderObjects);
 	        panPanel.add(cbRender);
->>>>>>> Stashed changes
 	        //
 	        
 	        panCenter.add(panPanel);

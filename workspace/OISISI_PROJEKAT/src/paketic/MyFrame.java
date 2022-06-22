@@ -1,13 +1,5 @@
 package paketic;
 
-<<<<<<< Updated upstream
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Toolkit;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-=======
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -25,7 +17,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
->>>>>>> Stashed changes
 
 
 public class MyFrame extends JFrame{
@@ -35,11 +26,7 @@ public class MyFrame extends JFrame{
 	Dimension screenSize = kit.getScreenSize();
 	int screenHeight = screenSize.height;
 	int screenWidth = screenSize.width;
-<<<<<<< Updated upstream
-	setSize(screenWidth / 2, screenHeight / 2);
-=======
 	setSize(screenWidth*3/4, screenHeight*3/4);
->>>>>>> Stashed changes
 	setTitle("Animacija");
 	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	setLocationRelativeTo(null);
@@ -49,8 +36,6 @@ public class MyFrame extends JFrame{
 	
 	setVisible(true);
 	
-<<<<<<< Updated upstream
-=======
 	JPanel panel = new JPanel();
 	panel.setBackground(Color.BLUE);
 	panel.setLayout(new BorderLayout());
@@ -189,7 +174,6 @@ JTable TableSoftware=new JTable(data2, columnNames2) {
 	tabbedPane.addTab("Software", scrollPaneSoftware);
 
 	
->>>>>>> Stashed changes
 //	JPanel panel = new JPanel();
 //	panel.setBackground(Color.BLUE);
 //	this.add(panel);
@@ -198,10 +182,7 @@ JTable TableSoftware=new JTable(data2, columnNames2) {
 	
 	
 	}
-<<<<<<< Updated upstream
-=======
 
 	
->>>>>>> Stashed changes
 	
 }
