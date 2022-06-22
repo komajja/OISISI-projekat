@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+D:\1FAKS\OISISI\OISISI-projekat\workspace\.metadata\.plugins\org.eclipse.jdt.core
+117955543.index
+1865797976.index
