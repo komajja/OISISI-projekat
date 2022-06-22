@@ -21,9 +21,9 @@ public class BazaCetkica {
 	public static List<Brush> cetkice = new ArrayList<Brush>();
 	private List<String> kolone;
 	
-	public static Brush brush_a = new Brush(1, "Move", "Pomera geometriju", new Color(10, 10, 10, 0));
-	public static Brush brush_b = new Brush(2, "Curve", "Dodaje oblike", new Color(2, 5, 50, 0));
-	public static Brush brush_c = new Brush(3, "Polish", "Uglacava povrsinu", new Color(45, 80, 4, 0));
+	public static Brush brush_a = new Brush(1, "Move", "Moves Geometry", new Color(207,68,39));
+	public static Brush brush_b = new Brush(2, "Draw", "Paints", new Color(235,226,195));
+	public static Brush brush_c = new Brush(3, "Polish", "Smooths Surface", new Color(230,160,36));
 	
 	
 	private BazaCetkica() {

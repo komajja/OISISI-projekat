@@ -19,12 +19,12 @@ public class BazaRenderi {
 	private List<Render> renderi = new ArrayList<Render>();
 	private List<String> kolone;
 	
-	static Render render_a = new Render(1,"Zlatnik", new ArrayList<String>(List.of("Water","Wood","Stone","Fabric")), 
-			new ArrayList<String>(List.of("Perspective")), new ArrayList<String>(List.of("SVETLO 1","SVETLO 2")), 
-			new ArrayList<String>(List.of("OBJ 2", "OBJ 1", "OBJ 4", "OBJ 5")));
-	static Render render_b = new Render(2, "Igracke", new ArrayList<String>(List.of("plastika", "metal", "pesak")), 
-			new ArrayList<String>(List.of("Perspective", "Orto")), new ArrayList<String>(List.of("SVETLO 3")), 
-			new ArrayList<String>(List.of("OBJ 1", "OBJ 3", "OBJ 4")));
+	static Render render_a = new Render(1,"Room", new ArrayList<String>(List.of("Water","Wood","Stone","Fabric")), 
+			new ArrayList<String>(List.of("Perspective")), new ArrayList<String>(List.of("Plane","Sphere")), 
+			new ArrayList<String>(List.of("Toy","Statue","House")));
+	static Render render_b = new Render(2, "Road", new ArrayList<String>(List.of("Plastic", "Metal", "Sand")), 
+			new ArrayList<String>(List.of("Perspective", "Ortographic")), new ArrayList<String>(List.of("Sun")), 
+			new ArrayList<String>(List.of("House","Human", "Car")));
 		
 	
 	private BazaRenderi() {

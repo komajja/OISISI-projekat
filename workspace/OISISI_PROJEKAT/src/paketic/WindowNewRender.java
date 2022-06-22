@@ -68,6 +68,7 @@ public WindowNewRender(char t){
 	Dimension dim=new Dimension(150,20); //dim za labele 
 	
 	JPanel panPanel=new JPanel(new FlowLayout(FlowLayout.LEFT));
+	panPanel.setBackground(ColBela);
 	
 	JLabel lblRenderName=new JLabel("Name:");
     lblRenderName.setPreferredSize(dim);
@@ -79,7 +80,7 @@ public WindowNewRender(char t){
     JLabel lblRenderMaterial=new JLabel("Material:");
     lblRenderMaterial.setPreferredSize(dim);
     
-    String[] materijal= {"Water","Wood","Stone","Fabric","Dirt", "plastika", "metal", "pesak"};
+    String[] materijal= {"Water","Wood","Stone","Fabric","Dirt", "Plastic", "Metal", "Sand"};
     listMaterijal = new JList<>(materijal);
     listMaterijal.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
     listMaterijal.setFixedCellHeight(15);
@@ -92,7 +93,7 @@ public WindowNewRender(char t){
     JLabel lblRenderCamera=new JLabel("Camera:");
     lblRenderCamera.setPreferredSize(dim);
     
-    String[] kamera= {"Perspective","Orto"};
+    String[] kamera= {"Perspective","Ortographic"};
     listKamera = new JList<>(kamera);
     listKamera.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
     listKamera.setFixedCellHeight(15);
@@ -105,7 +106,7 @@ public WindowNewRender(char t){
     JLabel lblRenderLight=new JLabel("Light:");
     lblRenderLight.setPreferredSize(dim);
     
-    String[] svetlo= {"SVETLO 1","SVETLO 2","SVETLO 3","SVETLO 4","SVETLO 5"};
+    String[] svetlo= {"Dome","Sun","Plane","Sphere","HDRI"};
     listSvetlo = new JList<>(svetlo);
     listSvetlo.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
     listSvetlo.setFixedCellHeight(15);
@@ -118,7 +119,7 @@ public WindowNewRender(char t){
     JLabel lblRenderObjects=new JLabel("Objects:");
     lblRenderObjects.setPreferredSize(dim);
     
-    String[] objekti= {"OBJ 1","OBJ 2","OBJ 3","OBJ 4", "OBJ 5"};
+    String[] objekti= {"Toy","Statue","House","Human", "Car"};
     listObj = new JList<>(objekti);
     listObj.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
     listObj.setFixedCellHeight(15);
@@ -185,22 +186,22 @@ public WindowNewRender(char t){
 				List<String> material = new ArrayList<String>();
 				int[] indeksiM = listMaterijal.getSelectedIndices();
 				for (int i = 0; i < indeksiM.length; i++) {
-					material.add(materijal[indeksiM[i]]);
+					material.add(materijal[i]);
 		        }
 				List<String> camera = new ArrayList<String>();
 				int[] indeksiC = listKamera.getSelectedIndices();
 				for (int i = 0; i < indeksiC.length; i++) {
-					camera.add(kamera[indeksiC[i]]);
+					camera.add(kamera[i]);
 		        }
 				List<String> svetla = new ArrayList<String>();
 				int[] indeksiS = listSvetlo.getSelectedIndices();
 				for (int i = 0; i < indeksiS.length; i++) {
-					svetla.add(svetlo[indeksiS[i]]);
+					svetla.add(svetlo[i]);
 		        }
 				List<String> obj = new ArrayList<String>();
 				int[] indeksiO = listObj.getSelectedIndices();
 				for (int i = 0; i < indeksiO.length; i++) {
-					obj.add(objekti[indeksiO[i]]);
+					obj.add(objekti[i]);
 		        }
 				
 				if (tip == 'u') {

@@ -66,6 +66,7 @@ public WindowNewBrush(char t){
 			Dimension dim=new Dimension(150,20); //dim za labele 
 			
 			JPanel panPanel=new JPanel(new FlowLayout(FlowLayout.LEFT));
+			panPanel.setBackground(ColBela);
 			
 			JLabel lblBrushesName=new JLabel("Name:");
 	        lblBrushesName.setPreferredSize(dim);
@@ -77,7 +78,7 @@ public WindowNewBrush(char t){
 	        JLabel lblBrushesUse=new JLabel("Use:");
 	        lblBrushesUse.setPreferredSize(dim);
 	        
-	        String[] namena= {"Move","Curve","Polish","Paint",};
+	        String[] namena= {"Moves Geometry","Polishes Surface","Adds Geometry","Paints",};
 	        cbNamena=new JComboBox<String>(namena);
 	        cbNamena.setVisible(true);
 	        cbNamena.setBackground(ColBela);

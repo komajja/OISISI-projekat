@@ -151,7 +151,7 @@ public class WindowNewEmployee extends JFrame {
 	        	        }
 	        			if(number>31 || number<1) {
 	        			// invalidan dan
-	        			JOptionPane.showMessageDialog(null, "Dan mora biti broj od 1 do 31!");
+	        			JOptionPane.showMessageDialog(null, "Day must be a number between 1 and 31!");
 	        			txt.setText(txt.getText().substring(0, txt.getText().length() - 1));
 	        			}
 	        			str = txt.getText();
@@ -187,7 +187,7 @@ public class WindowNewEmployee extends JFrame {
 	        	        }
 	        			if(number>12 || number<1) {
 	        			// invalidan dan
-	        			JOptionPane.showMessageDialog(null, "Mesec mora biti broj od 1 do 12!");
+	        			JOptionPane.showMessageDialog(null, "Month must be a number between 1 and 12!");
 	        			txt.setText(txt.getText().substring(0, txt.getText().length() - 1));
 	        			}
 	        			str = txt.getText();
@@ -211,7 +211,7 @@ public class WindowNewEmployee extends JFrame {
 	        		 	JTextField txt = (JTextField) arg0.getComponent();
 	        		 	if (txt.getText().length() == 4) {
 	        				// vec je uneto 4 karaktara
-	        				JOptionPane.showMessageDialog(null, "Možete uneti maksimalno 4 karaktera!");
+	        				JOptionPane.showMessageDialog(null, "You can only enter 4 characters!");
 	        				txt.setText(txt.getText().substring(0, 4));
 	        			}
 	        	 }
@@ -226,7 +226,7 @@ public class WindowNewEmployee extends JFrame {
 	        			char c = arg0.getKeyChar();
 	        			if (c != '0' && c != '1' && c != '2' && c != '3' && c != '4' && c != '5' && c != '6' && c != '7' && c != '8'
 	        					&& c != '9') {
-	        				JOptionPane.showMessageDialog(null, "Dozvoljen je unos samo brojeva!");
+	        				JOptionPane.showMessageDialog(null, "You can only enter numbers!");
 	        				JTextField txt = (JTextField) arg0.getComponent();
 	        				txt.setText(txt.getText().substring(0, txt.getText().length() - 1));
 	        			}
@@ -305,7 +305,7 @@ public class WindowNewEmployee extends JFrame {
 	        			char c = arg0.getKeyChar();
 	        			if (c != '0' && c != '1' && c != '2' && c != '3' && c != '4' && c != '5' && c != '6' && c != '7' && c != '8'
 	        					&& c != '9' && !Character.isAlphabetic(c)) {
-	        			JOptionPane.showMessageDialog(null, "Dozvoljen je unos samo brojeva i slova!");
+	        			JOptionPane.showMessageDialog(null, "You can only enter letters and numbers!");
 	        			JTextField txt = (JTextField) arg0.getComponent();
 	        			txt.setText(txt.getText().substring(0, txt.getText().length() - 1));
 	        			}
@@ -367,7 +367,7 @@ public class WindowNewEmployee extends JFrame {
 	        JLabel lblJobs=new JLabel ("Choose a job:");
 	        lblJobs.setPreferredSize(dim);
 	        
-	        String[] poslovi = { "Rigger","Animator", "Dizajner", "3D Generalist", "Menadzer", "Illustrator", "Modelar", "Texture Artist"};
+	        String[] poslovi = { "Rigger","Animator", "Designer", "3D Generalist", "Menager", "Illustrator", "Modeler", "Texture Artist"};
 	        CBradnoMesto = new JComboBox<String>(poslovi);
 	        CBradnoMesto.setVisible(true);
 	        CBradnoMesto.setBackground(ColBela);

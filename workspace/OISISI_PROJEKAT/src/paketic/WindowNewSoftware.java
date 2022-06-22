@@ -167,7 +167,7 @@ public WindowNewSoftware(char t){
 			JLabel lblModifikatori=new JLabel("Modifikatori:");
 		    lblModifikatori.setPreferredSize(dim);
 		    
-		    String[] modifikatori= {"MOD 1","MOD 2","MOD 3","MOD 4","MOD 5"};
+		    String[] modifikatori= {"Extrude","Bevel","Cloth","Noise","Edit Poly"};
 		    listModif = new JList<>(modifikatori);
 		    listModif.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 		    listModif.setFixedCellHeight(15);
@@ -181,7 +181,7 @@ public WindowNewSoftware(char t){
 		    JLabel lblFF=new JLabel("File Format:");
 		    lblFF.setPreferredSize(dim);
 	        
-	        String[] ff= {"FF 1","FF 2","FF 3","FF 4",};
+	        String[] ff= {".max",".ps",".obj",".fbx",};
 	        cbFF=new JComboBox<String>(ff);
 	        cbFF.setVisible(true);
 	        cbFF.setBackground(ColBela);
@@ -191,7 +191,7 @@ public WindowNewSoftware(char t){
 	        JLabel lblAnimT=new JLabel("Animation Tools:");
 	        lblAnimT.setPreferredSize(dim);
 		    
-		    String[] animtools= {"AT 1","AT 2","AT 3","AT 4","AT 5"};
+		    String[] animtools= {"Bone tool","Curve graph","Constraints","Timeline","MassFX"};
 		    listAT = new JList<>(animtools);
 		    listAT.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 		    listAT.setFixedCellHeight(15);
@@ -338,13 +338,13 @@ public WindowNewSoftware(char t){
 						List<String> modif = new ArrayList<String>();
 						int[] indeksiM = listModif.getSelectedIndices();
 						for (int i = 0; i < indeksiM.length; i++) {
-							modif.add(modifikatori[indeksiM[i]]);
+							modif.add(modifikatori[i]);
 				        }
 						String ff =(String) cbFF.getSelectedItem();
 						List<String> animationtools = new ArrayList<String>();
 						int[] indeksiAT = listAT.getSelectedIndices();
-						for (int i = 0; i < listAT.getSelectedIndices().length; i++) {
-							animationtools.add(animtools[indeksiAT[i]]);
+						for (int i = 0; i < indeksiAT.length; i++) {
+							animationtools.add(animtools[i]);
 				        }
 						List<Render> renders = new ArrayList<Render>();
 						int[] indeksiR = TableRenders.getSelectedRows();

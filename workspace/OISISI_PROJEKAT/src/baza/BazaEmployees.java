@@ -24,19 +24,19 @@ public class BazaEmployees{
 	public static List<Employee>employees  = new ArrayList<Employee>();
 	private List<String> kolone;
 	
-	static Adress adress_a = new Adress ("Balzakova", "21", "Novi Sad");
-	static Adress adress_b= new Adress ("Njegoseva", "4", "Novi Sad");
-	static Adress adress_c= new Adress ("Pariska", "5", "Beograd");
+	static Adress adress_a = new Adress ("Narodnog Fronta", "27", "Novi Sad");
+	static Adress adress_b= new Adress ("Strosmajerova", "3", "Beograd");
+	static Adress adress_c= new Adress ("Djure Jaksica", "53", "Novi Sad");
 	
-	static Employee employee1= new Employee(1, "Vuk", "Vukovic", 
-			"666", new ArrayList<String>(List.of("2", "1", "1969")), "vukyvuky@gmail.com", 
-			adress_a, new ArrayList<Software>(List.of(BazaSoftware.software_a)), "Menadzer");
-	static Employee employee2= new Employee(2, "Mirnko", "Mirkovic", 
-			"420", new ArrayList<String>(List.of("2", "1", "1969")), "Mirky420@gmail.com", 
-			adress_b, new ArrayList<Software>(List.of(BazaSoftware.software_b)), "Dizajner");
-	static Employee employee3= new Employee(3, "Boban", "Bobic", 
-			"390", new ArrayList<String>(List.of("2", "1", "1969")), "bobyca@gmail.com", 
-			adress_c, new ArrayList<Software>(List.of(BazaSoftware.software_c, BazaSoftware.software_a)), "Modelar");
+	static Employee employee1= new Employee(1, "Pera", "Peric", 
+			"010298870006", new ArrayList<String>(List.of("1", "2", "1988")), "pekipeca@gmail.com", 
+			adress_a, new ArrayList<Software>(List.of(BazaSoftware.software_a)), "Animator");
+	static Employee employee2= new Employee(2, "Mika", "Mikic", 
+			"020199680443", new ArrayList<String>(List.of("2", "1", "1996")), "mikicmika@gmail.com", 
+			adress_b, new ArrayList<Software>(List.of(BazaSoftware.software_b)), "Designer");
+	static Employee employee3= new Employee(3, "Ivana", "Ivanovic", 
+			"151299255034", new ArrayList<String>(List.of("15", "12", "1992")), "ivanica@gmail.com", 
+			adress_c, new ArrayList<Software>(List.of(BazaSoftware.software_c, BazaSoftware.software_a)), "3D Generalist");
 		
 	public static void popuniListe() {
 		adresses.add(adress_a);
