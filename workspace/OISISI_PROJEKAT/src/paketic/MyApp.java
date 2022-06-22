@@ -1,15 +1,14 @@
 package paketic;
 
 public class MyApp {
-
+		
+	private static MyFrame frame;
+	
 	public static void main(String[] args) {
-		
-		MyFrame frame = new MyFrame();
-		
-		WindowNewEmployee windowEmployee=new WindowNewEmployee(); //ovo povezati sa dugmetom za dodavanje novog zaposlenog
-		WindowNewSoftware windowSoftware= new WindowNewSoftware();
-		//AreYouSure DialogAreYouSure=new AreYouSure();
-		AboutUsPage AboutUs=new AboutUsPage();
+
+		frame = MyFrame.getInstance();
+//		WindowNewSoftware windowSoftware= new WindowNewSoftware();
+//		WindowNewEmployee2 winareyousure = new WindowNewEmployee2();
 	}
 	
 }
