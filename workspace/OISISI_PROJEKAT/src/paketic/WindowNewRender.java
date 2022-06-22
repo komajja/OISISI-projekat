@@ -184,25 +184,25 @@ public WindowNewRender(char t){
 			if (proveraNaziv(tip)) {
 				String ime = txtRenderName.getText().trim();
 				List<String> material = new ArrayList<String>();
-				int[] indeksiM = listMaterijal.getSelectedIndices();
-				for (int i = 0; i < indeksiM.length; i++) {
-					material.add(materijal[i]);
-		        }
-				List<String> camera = new ArrayList<String>();
-				int[] indeksiC = listKamera.getSelectedIndices();
-				for (int i = 0; i < indeksiC.length; i++) {
-					camera.add(kamera[i]);
-		        }
-				List<String> svetla = new ArrayList<String>();
-				int[] indeksiS = listSvetlo.getSelectedIndices();
-				for (int i = 0; i < indeksiS.length; i++) {
-					svetla.add(svetlo[i]);
-		        }
-				List<String> obj = new ArrayList<String>();
-				int[] indeksiO = listObj.getSelectedIndices();
-				for (int i = 0; i < indeksiO.length; i++) {
-					obj.add(objekti[i]);
-		        }
+                int[] indeksiM = listMaterijal.getSelectedIndices();
+                for (int i = 0; i < indeksiM.length; i++) {
+                    material.add(materijal[indeksiM[i]]);
+                }
+                List<String> camera = new ArrayList<String>();
+                int[] indeksiC = listKamera.getSelectedIndices();
+                for (int i = 0; i < indeksiC.length; i++) {
+                    camera.add(kamera[indeksiC[i]]);
+                }
+                List<String> svetla = new ArrayList<String>();
+                int[] indeksiS = listSvetlo.getSelectedIndices();
+                for (int i = 0; i < indeksiS.length; i++) {
+                    svetla.add(svetlo[indeksiS[i]]);
+                }
+                List<String> obj = new ArrayList<String>();
+                int[] indeksiO = listObj.getSelectedIndices();
+                for (int i = 0; i < indeksiO.length; i++) {
+                    obj.add(objekti[indeksiO[i]]);
+                }
 				
 				if (tip == 'u') {
 					Render nov = new Render(ime, material, camera, svetla, obj);

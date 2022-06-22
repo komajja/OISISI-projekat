@@ -154,8 +154,6 @@ public class WindowNewEmployee extends JFrame {
 	        			JOptionPane.showMessageDialog(null, "Day must be a number between 1 and 31!");
 	        			txt.setText(txt.getText().substring(0, txt.getText().length() - 1));
 	        			}
-	        			str = txt.getText();
-	        			System.out.println(str);
 	        	 }
 	        	@Override
 	        	public void keyTyped(KeyEvent arg0) {
@@ -190,8 +188,6 @@ public class WindowNewEmployee extends JFrame {
 	        			JOptionPane.showMessageDialog(null, "Month must be a number between 1 and 12!");
 	        			txt.setText(txt.getText().substring(0, txt.getText().length() - 1));
 	        			}
-	        			str = txt.getText();
-	        			System.out.println(str);
 	        	 }
 	        	@Override
 	        	public void keyTyped(KeyEvent arg0) {
@@ -230,9 +226,7 @@ public class WindowNewEmployee extends JFrame {
 	        				JTextField txt = (JTextField) arg0.getComponent();
 	        				txt.setText(txt.getText().substring(0, txt.getText().length() - 1));
 	        			}
-	        			JTextField txt = (JTextField) arg0.getComponent();
-	        			String str = txt.getText();
-	        			System.out.println(str);
+	        			
 	        	 }
 	        	@Override
 	        	public void keyTyped(KeyEvent arg0) {
@@ -251,22 +245,7 @@ public class WindowNewEmployee extends JFrame {
 
 	        txtEmail=new JTextField();
 	        txtEmail.setPreferredSize(dim);
-	        txtEmail.addKeyListener(new KeyListener(){ 
-	        	 @Override
-	        	 public void keyPressed(KeyEvent arg0) { 
-	        		 
-	        	 }
-	        	 @Override
-	        	 public void keyReleased(KeyEvent arg0) {
-	        		JTextField txt = (JTextField) arg0.getComponent();
-	        		String str = txt.getText();
-	        		System.out.println(str);
-	        	 }
-	        	@Override
-	        	public void keyTyped(KeyEvent arg0) {
-
-	        	}
-	         });
+	        
 
 	        panPanel.add(lblEmail);
 	        panPanel.add(txtEmail);
@@ -309,8 +288,7 @@ public class WindowNewEmployee extends JFrame {
 	        			JTextField txt = (JTextField) arg0.getComponent();
 	        			txt.setText(txt.getText().substring(0, txt.getText().length() - 1));
 	        			}
-	        			JTextField txt = (JTextField) arg0.getComponent();
-	        			String str = txt.getText();
+	        			
 	        	 }
 	        	@Override
 	        	public void keyTyped(KeyEvent arg0) {

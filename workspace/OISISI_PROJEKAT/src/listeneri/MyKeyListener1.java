@@ -17,7 +17,7 @@ public class MyKeyListener1 implements KeyListener{
 		JTextField txt = (JTextField) arg0.getComponent();
 		if (txt.getText().length() == 13) {
 			// vec je uneto 13 karaktara
-			JOptionPane.showMessageDialog(null, "Možete uneti maksimalno 13 karaktera!");
+			JOptionPane.showMessageDialog(null, "You can only enter 13 characters!");
 			txt.setText(txt.getText().substring(0, 13));
 		}
 	}
@@ -32,13 +32,10 @@ public class MyKeyListener1 implements KeyListener{
 		char c = arg0.getKeyChar();
 		if (c != '0' && c != '1' && c != '2' && c != '3' && c != '4' && c != '5' && c != '6' && c != '7' && c != '8'
 				&& c != '9') {
-			JOptionPane.showMessageDialog(null, "Dozvoljen je unos samo brojeva!");
+			JOptionPane.showMessageDialog(null, "You can only enter numbers!");
 			JTextField txt = (JTextField) arg0.getComponent();
 			txt.setText(txt.getText().substring(0, txt.getText().length() - 1));
 		}
-		JTextField txt = (JTextField) arg0.getComponent();
-		String str = txt.getText();
-		System.out.println(str);
 	}
 	
 	@Override

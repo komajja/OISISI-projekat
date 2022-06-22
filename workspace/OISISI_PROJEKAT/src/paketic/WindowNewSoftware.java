@@ -336,16 +336,16 @@ public WindowNewSoftware(char t){
 							brushes.add(BazaCetkica.getInstance().getBrushes().get(indeksiB[i]));
 				        }
 						List<String> modif = new ArrayList<String>();
-						int[] indeksiM = listModif.getSelectedIndices();
-						for (int i = 0; i < indeksiM.length; i++) {
-							modif.add(modifikatori[i]);
-				        }
+                        int[] indeksiM = listModif.getSelectedIndices();
+                        for (int i = 0; i < indeksiM.length; i++) {
+                            modif.add(modifikatori[indeksiM[i]]);
+                        }
 						String ff =(String) cbFF.getSelectedItem();
 						List<String> animationtools = new ArrayList<String>();
-						int[] indeksiAT = listAT.getSelectedIndices();
-						for (int i = 0; i < indeksiAT.length; i++) {
-							animationtools.add(animtools[i]);
-				        }
+                        int[] indeksiAT = listAT.getSelectedIndices();
+                        for (int i = 0; i < listAT.getSelectedIndices().length; i++) {
+                            animationtools.add(animtools[indeksiAT[i]]);
+                        }
 						List<Render> renders = new ArrayList<Render>();
 						int[] indeksiR = TableRenders.getSelectedRows();
 						for (int i = 0; i < indeksiR.length; i++) {

@@ -24,12 +24,12 @@ public class BazaSoftware {
 	public static List<Software> softwares = new ArrayList<Software>();
 	private List<String> kolones;
 	
-	static Software software_a= new Software(1, "3ds Max", new ArrayList<Brush>(List.of(BazaCetkica.brush_a)), new ArrayList<String>(List.of("Noise", "Bevel")),".max", new ArrayList<String>(List.of("Bone tool, Curve graph")), new ArrayList<Render>(List.of(BazaRenderi.render_a)));
-	static Software software_b= new Software(2, "Zbrush", new ArrayList<Brush>(List.of(BazaCetkica.brush_a,BazaCetkica.brush_b, BazaCetkica.brush_c)), new ArrayList<String>(List.of("Extrude")), ".obj", new ArrayList<String>(List.of("MassFX, Constraints")), new ArrayList<Render>(List.of(BazaRenderi.render_b)));
-	static Software software_c= new Software(3, "Blender", new ArrayList<Brush>(List.of(BazaCetkica.brush_c)), new ArrayList<String>(List.of("Bevel")), ".fbx", new ArrayList<String>(List.of("Constraints, Timeline")), new ArrayList<Render>(List.of(BazaRenderi.render_a)));
-	static Software software_d= new Software(4, "Maya", new ArrayList<Brush>(List.of(BazaCetkica.brush_a, BazaCetkica.brush_b)), new ArrayList<String>(List.of("Cloth", "Extrude")),".max", new ArrayList<String>(List.of("Bone tool, MassFX")), new ArrayList<Render>(List.of(BazaRenderi.render_b)));
-	static Software software_e= new Software(5, "Photoshop", new ArrayList<Brush>(List.of(BazaCetkica.brush_b, BazaCetkica.brush_a)), new ArrayList<String>(List.of("Noise")),".ps", new ArrayList<String>(List.of("Bone tool, Curve graph")), new ArrayList<Render>(List.of(BazaRenderi.render_a)));
-	static Software software_f= new Software(6, "Cinema4D", new ArrayList<Brush>(List.of(BazaCetkica.brush_a, BazaCetkica.brush_c)), new ArrayList<String>(List.of("Edit Poly")),".max", new ArrayList<String>(List.of("Bone tool, Curve graph, MassFX")), new ArrayList<Render>(List.of(BazaRenderi.render_a)));
+	static Software software_a= new Software(1, "3ds Max", new ArrayList<Brush>(List.of(BazaCetkica.brush_a)), new ArrayList<String>(List.of("Noise", "Bevel")),".max", new ArrayList<String>(List.of("Bone tool", "Curve graph")), new ArrayList<Render>(List.of(BazaRenderi.render_a)));
+	static Software software_b= new Software(2, "Zbrush", new ArrayList<Brush>(List.of(BazaCetkica.brush_a,BazaCetkica.brush_b, BazaCetkica.brush_c)), new ArrayList<String>(List.of("Extrude")), ".obj", new ArrayList<String>(List.of("MassFX", "Constraints")), new ArrayList<Render>(List.of(BazaRenderi.render_b)));
+	static Software software_c= new Software(3, "Blender", new ArrayList<Brush>(List.of(BazaCetkica.brush_c)), new ArrayList<String>(List.of("Bevel")), ".fbx", new ArrayList<String>(List.of("Constraints", "Timeline")), new ArrayList<Render>(List.of(BazaRenderi.render_a)));
+	static Software software_d= new Software(4, "Maya", new ArrayList<Brush>(List.of(BazaCetkica.brush_a, BazaCetkica.brush_b)), new ArrayList<String>(List.of("Cloth", "Extrude")),".max", new ArrayList<String>(List.of("Bone tool", "MassFX")), new ArrayList<Render>(List.of(BazaRenderi.render_b)));
+	static Software software_e= new Software(5, "Photoshop", new ArrayList<Brush>(List.of(BazaCetkica.brush_b, BazaCetkica.brush_a)), new ArrayList<String>(List.of("Noise")),".ps", new ArrayList<String>(List.of("Bone tool", "Curve graph")), new ArrayList<Render>(List.of(BazaRenderi.render_a)));
+	static Software software_f= new Software(6, "Cinema4D", new ArrayList<Brush>(List.of(BazaCetkica.brush_a, BazaCetkica.brush_c)), new ArrayList<String>(List.of("Edit Poly")),".max", new ArrayList<String>(List.of("Bone tool", "Curve graph", "MassFX")), new ArrayList<Render>(List.of(BazaRenderi.render_a)));
 	
 	private BazaSoftware() {
 		
