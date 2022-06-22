@@ -1,34 +1,26 @@
 package paketic;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JRadioButton;
 import javax.swing.JTextField;
-import javax.swing.WindowConstants;
-import javax.swing.border.EmptyBorder;
-
 import baza.BazaEmployees;
 import baza.BazaSoftware;
 import listeneri.MyKeyListener1;
@@ -38,6 +30,11 @@ import model.Employee;
 import model.Software;
 
 public class WindowNewEmployee extends JFrame {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 598633886139384545L;
 	
 	private char tip;
 	private JTextField txtName;
@@ -54,6 +51,15 @@ public class WindowNewEmployee extends JFrame {
 	JComboBox<String> cb2;
 	private String trenutniJMBG;
 	
+	//BOJE za GUI
+		Color ColBraon=new Color(59,48,28);
+		Color ColCrvena=new Color(207,68,39);
+		Color ColKrem=new Color(235,226,195);
+		Color ColBela=new Color(251,248,241);
+		Color ColNaran=new Color(230,160,36);
+		
+		//
+	
 	public WindowNewEmployee(char t) {
 		
 		JDialog dijalogEmployee;
@@ -69,13 +75,14 @@ public class WindowNewEmployee extends JFrame {
 			panCenter.setLayout(boxCenter);
 			dijalogEmployee.add(panCenter,BorderLayout.CENTER);
 			
-			
-			Dimension dim=new Dimension(150,20); //dim za labele i to
+			Dimension dim=new Dimension(150,20); //dim za labele
 			
 			//IME dodati da mogu samo slova
 			JPanel panPanel=new JPanel(new FlowLayout(FlowLayout.LEFT));
 	        JLabel lblName=new JLabel("Name:");
 	        lblName.setPreferredSize(dim);
+	        
+			panPanel.setBackground(ColBela);
 
 	        txtName=new JTextField();
 	        txtName.setPreferredSize(dim);
@@ -86,7 +93,7 @@ public class WindowNewEmployee extends JFrame {
 	        panPanel.add(txtName);
 	       			
 	        //PREZIME dodati da mogu samo slova
-	        //JPanel panLastName=new JPanel(new FlowLayout(FlowLayout.LEFT));
+	     
 	        JLabel lblLastName=new JLabel("Last name:");
 	        lblLastName.setPreferredSize(dim);
 
@@ -336,7 +343,8 @@ public class WindowNewEmployee extends JFrame {
 	        
 	        cb1=new JComboBox<String>();
 	        cb1.setVisible(true);
-	        
+	        cb1.setBackground(ColBela);
+	        	        
 	        for (int i = 0; i < BazaSoftware.getInstance().getSoftware().size(); i++) {
 	        	cb1.addItem(BazaSoftware.getInstance().getSoftware().get(i).getName());
 	        }
@@ -357,10 +365,10 @@ public class WindowNewEmployee extends JFrame {
 	        JLabel lblJobs=new JLabel ("Choose a job:");
 	        lblJobs.setPreferredSize(dim);
 	        
-	        String[] poslovi = { "CHOICE 1","CHOICE 2", "CHOICE 3","CHOICE 4","CHOICE 5","CHOICE 6"};
+	        String[] poslovi = { "Rigger","Animator", "3D Generalist","Illustrator","Texture Artist","3D Modeling"};
 	        cb2 = new JComboBox<String>(poslovi);
 	        cb2.setVisible(true);
-	        
+	        cb2.setBackground(ColBela);
 //	        JRadioButton radBtn1 = new JRadioButton("Job 1");
 //			JRadioButton radBtn2 = new JRadioButton("Job 2");
 			
@@ -403,6 +411,7 @@ public class WindowNewEmployee extends JFrame {
 			BoxLayout box=new BoxLayout(panBottom, BoxLayout.X_AXIS); //sredi posle u 1 liniju sve
 			panBottom.setLayout(box);
 			dijalogEmployee.add(panBottom,BorderLayout.SOUTH);
+			panBottom.setBackground(ColBela);
 			
 			JButton btnOk=new JButton("Ok");
 			btnOk.setPreferredSize(new Dimension(75,25));
@@ -468,30 +477,7 @@ public class WindowNewEmployee extends JFrame {
 					
 			panBottom.add(Box.createRigidArea(new Dimension(30,50))); //mozda jos cackati velicine
 			
-	        
-			
-			
-			
-			
-	        //dijalogEmployee.setLayout( new FlowLayout() );  
-//	        JButton b = new JButton ("OK"); 
-//	        panCenter.add(b);
-//	        b.addActionListener ( new ActionListener()  
-//	        {  
-//	            public void actionPerformed( ActionEvent e )  
-//	            {  
-//	                DialogExample.d.setVisible(false);  
-//	            }  
-//	        });  
-//	        dijalogEmployee.add( new JLabel ("Click button to continue."));  
-//	        dijalogEmployee.add(b);   
-	         
-	    //}  
-//	    public static void main(String args[])  
-//	    {  
-//	        new DialogExample();  
-//	    }  
-			
+	     			
 		dijalogEmployee.setResizable(false);
 		dijalogEmployee.setVisible(true); 
 		pack();

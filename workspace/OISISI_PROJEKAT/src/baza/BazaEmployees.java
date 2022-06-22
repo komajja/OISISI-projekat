@@ -1,10 +1,7 @@
 package baza;
 
-import java.awt.Color;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-
 
 import model.Adress;
 import model.Brush;

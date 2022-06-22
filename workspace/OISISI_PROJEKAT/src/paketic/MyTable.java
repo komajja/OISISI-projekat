@@ -1,9 +1,9 @@
-package paketic;
-
-import javax.swing.JTable;
-
-public class MyTable extends JTable{
-	
-	
-    
-}
+//package paketic;
+//
+//import javax.swing.JTable;
+//
+//public class MyTable extends JTable{
+//	
+//	
+//    
+//}

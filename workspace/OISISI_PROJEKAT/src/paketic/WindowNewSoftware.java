@@ -1,6 +1,7 @@
 package paketic;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
@@ -9,10 +10,8 @@ import java.awt.event.WindowEvent;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JColorChooser;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
@@ -20,15 +19,26 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 public class WindowNewSoftware  extends JFrame {
-
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1940714128261676067L;
+	
+			//BOJE za GUI
+			Color ColBraon=new Color(59,48,28);
+			Color ColCrvena=new Color(207,68,39);
+			Color ColKrem=new Color(235,226,195);
+			Color ColBela=new Color(251,248,241);
+			Color ColNaran=new Color(230,160,36);
+			
+			//
 public WindowNewSoftware(){
 		
 		JDialog dijalogSoftware;  
-		//DialogExample() {  
 	        JFrame f= new JFrame();  
 	        dijalogSoftware = new JDialog(f , "Software", true); 
 	        dijalogSoftware.setSize(637,760);    
@@ -39,17 +49,19 @@ public WindowNewSoftware(){
 			dijalogSoftware.add(panCenter,BorderLayout.CENTER);
 			
 			
-			Dimension dim=new Dimension(150,20); //dim za labele i to
+			Dimension dim=new Dimension(150,20); //dim za labele 
 			
 			//NAZIV dodati da mogu samo slova I JEDINSTVENOST!!! 	
 			JPanel panPanel=new JPanel(new FlowLayout(FlowLayout.LEFT));
 	        JLabel lblName=new JLabel("Software name:");
 	        lblName.setPreferredSize(dim);
+	        
+	        panPanel.setBackground(ColBela);
 
 	        JTextField txtName=new JTextField();
 	        txtName.setPreferredSize(dim);
 	       	
-	        //JPanel panLastName=new JPanel(new FlowLayout(FlowLayout.LEFT));
+	        
 	        JLabel lblBrushes=new JLabel("Brushes:");
 	        lblBrushes.setPreferredSize(dim);
 
@@ -64,16 +76,17 @@ public WindowNewSoftware(){
 	        JLabel lblBrushesUse=new JLabel("Use:");
 	        lblBrushesUse.setPreferredSize(dim);
 	        
-	        String[] namena= {"NAMENA 1","NAMENA 2","NAMENA 3","NAMENA 4",};
+	        String[] namena= {"Move","Curve","Polish","Paint",};
 	        JComboBox<String> cbNamena=new JComboBox<String>(namena);
 	        cbNamena.setVisible(true);
-	        	        
+	        cbNamena.setBackground(ColBela);
+	        
 	        //boja
 	        JLabel lblBrushesColor=new JLabel("Color:");
 	        lblBrushesColor.setPreferredSize(dim);
 	        
 	        JColorChooser brushColorChooser = new JColorChooser();
-	        
+	        brushColorChooser.setBackground(ColBela);
 	        //RENDER
 	        
 	        JLabel lblRender=new JLabel("Render:");
@@ -90,10 +103,11 @@ public WindowNewSoftware(){
 	        JLabel lblRenderMaterial=new JLabel("Material:");
 	        lblRenderMaterial.setPreferredSize(dim);
 	        
-	        String[] materijal= {"MATERIJAL 1","MATERIJAL 2","MATERIJAL 3","MATERIJAL 4"};
+	        String[] materijal= {"Water","Wood","Stone","Fabric"};
 	        JComboBox<String> cbMaterijal = new JComboBox<String>(materijal);
 
 	        cbMaterijal.setVisible(true);
+	        cbMaterijal.setBackground(ColBela);
 	        
 	        //kamere
 	        JLabel lblRenderCamera=new JLabel("Camera:");
@@ -103,6 +117,7 @@ public WindowNewSoftware(){
 	        JComboBox<String> cbKamera = new JComboBox<String>(kamera);
 
 	        cbKamera.setVisible(true);
+	        cbKamera.setBackground(ColBela);
 	        
 	        //svetlo
 	        JLabel lblRenderLight=new JLabel("Light:");
@@ -112,6 +127,7 @@ public WindowNewSoftware(){
 	        JComboBox<String> cbSvetlo = new JComboBox<String>(svetlo);
 
 	        cbSvetlo.setVisible(true);
+	        cbSvetlo.setBackground(ColBela);
 	        
 	        //objekti
 	        JLabel lblRenderObjects=new JLabel("Objects:");
@@ -121,6 +137,7 @@ public WindowNewSoftware(){
 	        JComboBox<String> cbRender = new JComboBox<String>(render);
 
 	        cbRender.setVisible(true);
+	        cbRender.setBackground(ColBela);
 	        
 	        //dodavanje labela u panel
 	        
@@ -162,18 +179,15 @@ public WindowNewSoftware(){
 	        panPanel.add(Box.createRigidArea(new Dimension(10,0)));
 	        panPanel.add(lblRenderObjects);
 	        panPanel.add(cbRender);
-	        //
+	        
 	        
 	        panCenter.add(panPanel);
-	        
-	        //panCenter.add(Box.createVerticalStrut(25));  
-	        
-	        
-	       // add(panCenter,);
+	     
 	        
 	        JPanel panBottom=new JPanel();
 			BoxLayout box=new BoxLayout(panBottom, BoxLayout.X_AXIS); //sredi posle u 1 liniju sve
 			panBottom.setLayout(box);
+			panBottom.setBackground(ColBela);
 			dijalogSoftware.add(panBottom,BorderLayout.SOUTH);
 			
 			JButton btnOk=new JButton("Ok");
@@ -220,28 +234,6 @@ public WindowNewSoftware(){
 			panBottom.add(Box.createRigidArea(new Dimension(30,50))); //mozda jos cackati velicine
 			
 	        
-			
-			
-			
-			
-	        //dijalogEmployee.setLayout( new FlowLayout() );  
-//	        JButton b = new JButton ("OK"); 
-//	        panCenter.add(b);
-//	        b.addActionListener ( new ActionListener()  
-//	        {  
-//	            public void actionPerformed( ActionEvent e )  
-//	            {  
-//	                DialogExample.d.setVisible(false);  
-//	            }  
-//	        });  
-//	        dijalogEmployee.add( new JLabel ("Click button to continue."));  
-//	        dijalogEmployee.add(b);   
-	         
-	    //}  
-//	    public static void main(String args[])  
-//	    {  
-//	        new DialogExample();  
-//	    }  
 		dijalogSoftware.setResizable(false);
 		dijalogSoftware.setVisible(true); 
 		pack();

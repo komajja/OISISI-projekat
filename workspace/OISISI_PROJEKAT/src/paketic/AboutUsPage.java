@@ -4,9 +4,6 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.Image;
-
-import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JDialog;
@@ -16,7 +13,19 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 public class AboutUsPage extends JFrame {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5686564232918136941L;
+	//BOJE za GUI
+	Color ColBraon=new Color(59,48,28);
+	Color ColCrvena=new Color(207,68,39);
+	Color ColKrem=new Color(235,226,195);
+	Color ColBela=new Color(251,248,241);
+	Color ColNaran=new Color(230,160,36);
 	
+	//
 	public AboutUsPage() {
 		
 		JDialog dijalogAboutUs;
@@ -33,84 +42,72 @@ public class AboutUsPage extends JFrame {
 		
 		//Osoba 1
 		//slika
-		ImageIcon icon=new ImageIcon("image/Ani2.gif");
+		ImageIcon icon=new ImageIcon("image/kokk.gif");
 		JLabel lblPic1=new JLabel();
-		//lblPic1.setBackground(Color.YELLOW);
 		lblPic1.setIcon(icon);
-		
-		//lblPic1.setSize(new Dimension(128,128));
 		
 		//tekst
 		JPanel panPanel=new JPanel(new FlowLayout(FlowLayout.LEFT));
-		JLabel lblText1=new JLabel("Ime Prezime AI 00/2019");
+		JLabel lblText1=new JLabel("Daria Varga AI 23/2019");
 		lblText1.setPreferredSize(dim);
-		
+		lblText1.setForeground(ColBraon);	
 		panPanel.add(lblPic1);
 		panPanel.add(lblText1);
-		//panPanel.add(Box.createRigidArea(new Dimension(500,0)));
 		
 		//Osoba 2
 		
 		//slika
 		
-		ImageIcon icon2=new ImageIcon("image/Pic1.png");
+		ImageIcon icon2=new ImageIcon("image/pip.gif");
 		JLabel lblPic2=new JLabel();
 		lblPic2.setIcon(icon2);
-		//lblPic1.setSize(new Dimension(128,128));
 		
 		//tekst
-		JLabel lblText2=new JLabel("Ime Prezime AI 00/2019",SwingConstants.RIGHT);
+		JLabel lblText2=new JLabel("Kristina Rikic AI 33/2019",SwingConstants.RIGHT);
 		lblText2.setPreferredSize(dim);
-								
+		lblText2.setForeground(ColBraon);				
 		panPanel.add(lblText2);
 		panPanel.add(lblPic2);
 				
 		//Osoba 3
 		
 		//slika
-		ImageIcon icon3=new ImageIcon("image/Pic1.png");
+		ImageIcon icon3=new ImageIcon("image/pec.gif");
 		JLabel lblPic3=new JLabel();
 		lblPic3.setIcon(icon3);
-		//lblPic1.setSize(new Dimension(128,128));
 				
 		//tekst
 				
-		JLabel lblText3=new JLabel("Ime Prezime AI 00/2019");
+		JLabel lblText3=new JLabel("Maja Kovac AI 38/2019");
 		lblText3.setPreferredSize(dim);
-				
+		lblText3.setForeground(ColBraon);		
 		panPanel.add(lblPic3);
 		panPanel.add(lblText3);
 		
 		//Osoba 4
 		
 		//slika
-		ImageIcon icon4=new ImageIcon("image/Pic1.png");
+		ImageIcon icon4=new ImageIcon("image/jezz.gif");
 		JLabel lblPic4=new JLabel();
 		lblPic4.setIcon(icon4);
-		//lblPic1.setSize(new Dimension(128,128));
-						
+				
 		//tekst
 					
-		JLabel lblText4=new JLabel("Ime Prezime AI 00/2019",SwingConstants.RIGHT);
+		JLabel lblText4=new JLabel("Marija Tatar AI 47/2019",SwingConstants.RIGHT);
 		lblText4.setPreferredSize(dim);
-		
+		lblText4.setForeground(ColBraon);	
 		panPanel.add(lblText4);		
 		panPanel.add(lblPic4);
-		
-		
 		
 		
 		panCenter.add(panPanel);
 		
 		
-		//Bottom ako bude trebalo?
-		JPanel panBottom=new JPanel();
-		BoxLayout box=new BoxLayout(panBottom, BoxLayout.X_AXIS);
-		panBottom.setLayout(box);
-		dijalogAboutUs.add(panBottom,BorderLayout.SOUTH);
-		
-		
-		
+//		//Bottom ako bude trebalo?
+//		JPanel panBottom=new JPanel();
+//		BoxLayout box=new BoxLayout(panBottom, BoxLayout.X_AXIS);
+//		panBottom.setLayout(box);
+//		dijalogAboutUs.add(panBottom,BorderLayout.SOUTH);
 		
 		
 		dijalogAboutUs.setResizable(false);

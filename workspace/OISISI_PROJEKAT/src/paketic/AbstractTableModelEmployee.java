@@ -5,7 +5,12 @@ import baza.BazaEmployees;
 
 public class AbstractTableModelEmployee extends AbstractTableModel {
  
-	 @Override
+	 /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1206601227594867035L;
+
+	@Override
 		public int getRowCount() {
 			if (BazaEmployees.getInstance().getEmployees() == null) {
 				return 1;

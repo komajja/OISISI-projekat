@@ -6,6 +6,11 @@ import baza.BazaSoftware;
 
 public class AbstractTableModelSoftware extends AbstractTableModel {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1101690912459067379L;
+
 	@Override
 	public int getRowCount() {
 		if (BazaSoftware.getInstance().getSoftware() == null) {
