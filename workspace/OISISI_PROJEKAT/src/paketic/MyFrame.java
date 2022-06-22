@@ -37,7 +37,7 @@ public class MyFrame extends JFrame{
 	setVisible(true);
 	
 	JPanel panel = new JPanel();
-	panel.setBackground(Color.BLUE);
+	panel.setBackground(new Color(59,48,27));
 	panel.setLayout(new BorderLayout());
 	this.add(panel, BorderLayout.CENTER);
 	

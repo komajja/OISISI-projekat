@@ -26,7 +26,7 @@ public WindowNewSoftware(){
 		//DialogExample() {  
 	        JFrame f= new JFrame();  
 	        dijalogSoftware = new JDialog(f , "Software", true); 
-	        dijalogSoftware.setSize(637,760);    
+	        dijalogSoftware.setSize(637,750);    
 	        
 	        JPanel panCenter=new JPanel();
 			BoxLayout boxCenter=new BoxLayout(panCenter, BoxLayout.Y_AXIS);

@@ -8,6 +8,8 @@ public class MyApp {
 		
 		WindowNewEmployee windowEmployee=new WindowNewEmployee(); //ovo povezati sa dugmetom za dodavanje novog zaposlenog
 		WindowNewSoftware windowSoftware= new WindowNewSoftware();
+		//AreYouSure DialogAreYouSure=new AreYouSure();
+		AboutUsPage AboutUs=new AboutUsPage();
 	}
 	
 }
