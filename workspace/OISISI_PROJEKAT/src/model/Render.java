@@ -1,20 +1,21 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Render {
 	
 	private long id;
 	private String naziv;
-	private String materijal;
-	private String kamera;
+	private List<String> materijali = new ArrayList<String>();
+	private List<String> kamera = new ArrayList<String>();
 	private String svetlo;
-	private String objekat;
+	private List<String> objekat = new ArrayList<String>();;
 	
-	public Render(long id, List<String> materijal, List<String> kamera, List<String> svetlo, List<String> objekat, String naziv) {
+	public Render(long id, List<String> materijali, List<String> kamera, String svetlo, List<String> objekat, String naziv) {
 		super();
 		this.id = id;
-		this.materijal = materijal;
+		this.materijali = materijali;
 		this.kamera = kamera;
 		this.svetlo = svetlo;
 		this.objekat = objekat;
@@ -37,19 +38,17 @@ public class Render {
 		this.naziv = naziv;
 	}
 	
-	public String getMaterial() {
-		return materijal;
+	public List<String> getMaterijali() {
+		return materijali;
 	}
-
-	public void setMaterial(String materijal) {
-		this.materijal = materijal;
+	public void setMaterijali(List<String> materijali) {
+		this.materijali = materijali;
 	}
 	
-	public String getCamera() {
+	public List<String> getKamera() {
 		return kamera;
 	}
-
-	public void setCamera(String kamera) {
+	public void setKamere(List<String> kamera) {
 		this.kamera = kamera;
 	}
 	
@@ -61,16 +60,15 @@ public class Render {
 		this.svetlo = svetlo;
 	}
 	
-	public String getObject() {
+	public List<String> getObjekat() {
 		return objekat;
 	}
-
-	public void setObject(String objekat) {
+	public void setObjekti(List<String> objekat) {
 		this.objekat = objekat;
 	}
 	
 	@Override
 	public String toString() {
-		return naziv + "," + materijal + "," + kamera + "," + svetlo + "," + objekat;
+		return naziv + "," + materijali + "," + kamera + "," + svetlo + "," + objekat;
 	}
 }

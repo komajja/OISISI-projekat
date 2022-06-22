@@ -1,20 +1,23 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Software {
 	private long id;		//NOVO
 	private String naziv;
-	private Brush cetkica;
+	private List<Brush> cetkice = new ArrayList<Brush>();
 	private String modifikator;
 	private String fajlFormat;
-	private String animationTool;
+	private List<String> animationTool = new ArrayList<String>();;
 	private Render render;
 
 	
-	public Software(long id, String naziv, Brush cetkica, String modifikator, String fajlFormat, String animationTool, Render render) {
+	public Software(long id, String naziv, List<Brush> cetkica, String modifikator, String fajlFormat, List<String>  animationTool, Render render) {
 		super();
 		this.id = id;		//NOVO KAO I PRVI ARGUMENT 
 		this.naziv = naziv;
-		this.cetkica = cetkica;
+		this.cetkice = cetkice;
 		this.modifikator = modifikator;
 		this.fajlFormat = fajlFormat;
 		this.animationTool = animationTool;
@@ -37,12 +40,11 @@ public class Software {
 		this.naziv = naziv;
 	}
 
-	public Brush getBrush() {
-		return cetkica;
+	public List<Brush> getCetkice() {
+		return cetkice;
 	}
-
-	public void setNaziv(Brush cetkica) {
-		this.cetkica = cetkica;
+	public void setCetkice(List<Brush> cetkice) {
+		this.cetkice = cetkice;
 	}
 	
 	//
@@ -62,11 +64,10 @@ public class Software {
 		this.fajlFormat = fajlFormat;
 	}
 	
-	public String getATool() {
+	public List<String> getAlati() {
 		return animationTool;
 	}
-
-	public void setATool(String animationTool) {
+	public void setAlati(List<String> animationTool) {
 		this.animationTool = animationTool;
 	}
 	

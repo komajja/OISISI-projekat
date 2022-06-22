@@ -4,34 +4,10 @@ public class Adress {
 	
 	private long id;  //NOVO    
 	private String Ulica;
-	private String Broj;
+	private int Broj;
 	private String Grad;
 	
-	public String getUlica() {
-		return Ulica;
-	}
-
-	public void setUlica(String ulica) {
-		this.Ulica = ulica;
-	}
-
-	public String getBroj() {
-		return Broj;
-	}
-
-	public void setBroj(String broj) {
-		this.Broj = broj;
-	}
-
-	public String getGrad() {
-		return Grad;
-	}
-
-	public void setGrad(String grad) {
-		Grad = grad;
-	}
-
-	public Adress(long id, String ulica, String broj, String grad) {
+	public Adress(long id, String ulica, int broj, String grad) {
 		super();
 		this.id = id;		//NOVO KAO I PRVI ARGUMENT
 		this.Ulica = ulica;
@@ -46,6 +22,31 @@ public class Adress {
 	public void setId(long id) {		//NOVO
 		this.id = id;
 	}
+	public String getUlica() {
+		return Ulica;
+	}
+
+	public void setUlica(String ulica) {
+		this.Ulica = ulica;
+	}
+
+	public int getBroj() {
+		return Broj;
+	}
+
+	public void setBroj(int broj) {
+		this.Broj = broj;
+	}
+
+	public String getGrad() {
+		return Grad;
+	}
+
+	public void setGrad(String grad) {
+		Grad = grad;
+	}
+
+	
 	
 	public Adress() {
 		super();
