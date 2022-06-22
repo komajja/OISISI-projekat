@@ -7,9 +7,9 @@ import javax.swing.JButton;
 import javax.swing.JToolBar;
 import javax.swing.SwingConstants;
 
-public class MyToolbar extends JToolBar {
+public class MyToolBar extends JToolBar {
 
-	public MyToolbar() {
+	public MyToolBar() {
 		
 		//
 		//
