@@ -1,9 +1,3 @@
-/*package kontroleri;
-
-public class ControllerSoftware {
-
-}
-*/
 package kontoleri;
 
 import java.time.LocalDate;
@@ -33,7 +27,7 @@ private static ControllerSoftware instance = null;
 	private ControllerSoftware(){}
 	
 	public void addSoftware() {
-		WindowNewSoftware windowsoftware = new WindowNewSoftware();
+		WindowNewSoftware windowsoftware = new WindowNewSoftware('u');
 	}
 	
 	public void deleteSoftware (int rowSelectedIndex) {
@@ -49,7 +43,7 @@ private static ControllerSoftware instance = null;
 		}
 	}
 	
-	public void editEmployee() {
-		WindowNewSoftware windowsoftware = new WindowNewSoftware();
+	public void editSoftware() {
+		WindowNewSoftware windowsoftware = new WindowNewSoftware('i');
 	}
 }

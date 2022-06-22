@@ -12,14 +12,14 @@ public class Employee {
 	private List<String> datumRodjenja = new ArrayList<String>();
 	private String email;
 	private Adress adresa;
-	private Software softver;
+	private List<Software> softver;
 	private String radnoMesto;
 	
 	public Employee() {
 		super();
 	}
 	
-	public Employee(long id, String ime, String prezime, String jmbg, List<String> datumRodjenja, String email, Adress adresa, Software softver, String radnoMesto) {
+	public Employee(long id, String ime, String prezime, String jmbg, List<String> datumRodjenja, String email, Adress adresa, List<Software> softver, String radnoMesto) {
 		super();
 		this.id = id;		//NOVO KAO I PRVI ARGUMENT 
 		this.ime = ime;
@@ -32,7 +32,7 @@ public class Employee {
 		this.radnoMesto=radnoMesto;
 		}
 	
-	public Employee(String ime, String prezime, String jmbg, List<String> datumRodjenja, String email, Adress adresa, Software softver, String radnoMesto) {
+	public Employee(String ime, String prezime, String jmbg, List<String> datumRodjenja, String email, Adress adresa, List<Software> softver, String radnoMesto) {
 		super();
 		this.ime = ime;
 		this.prezime = prezime;
@@ -102,11 +102,11 @@ public void setAdresa(Adress adresa) {
 	this.adresa = adresa;
 }
 
-public Software getSoftver() {
+public List<Software> getSoftver() {
 	return softver;
 }
 
-public void setSoftver(Software softver) {
+public void setSoftver(List<Software> softver) {
 	this.softver = softver;
 }
 

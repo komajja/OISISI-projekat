@@ -20,8 +20,6 @@ public class BazaEmployees{
 		return instance;
 	}
 	
-	private long generator;
-	
 	public static List<Adress> adresses = new ArrayList<Adress>();
 	public static List<Employee>employees  = new ArrayList<Employee>();
 	private List<String> kolone;
@@ -32,13 +30,13 @@ public class BazaEmployees{
 	
 	static Employee employee1= new Employee(1, "Vuk", "Vukovic", 
 			"666", new ArrayList<String>(List.of("2", "1", "1969")), "vukyvuky@gmail.com", 
-			adress_a, BazaSoftware.software_a, "Menadzer");
+			adress_a, new ArrayList<Software>(List.of(BazaSoftware.software_a)), "Menadzer");
 	static Employee employee2= new Employee(2, "Mirnko", "Mirkovic", 
 			"420", new ArrayList<String>(List.of("2", "1", "1969")), "Mirky420@gmail.com", 
-			adress_b, BazaSoftware.software_b, "Dizajner");
+			adress_b, new ArrayList<Software>(List.of(BazaSoftware.software_b)), "Dizajner");
 	static Employee employee3= new Employee(3, "Boban", "Bobic", 
 			"390", new ArrayList<String>(List.of("2", "1", "1969")), "bobyca@gmail.com", 
-			adress_c, BazaSoftware.software_c, "Modelar");
+			adress_c, new ArrayList<Software>(List.of(BazaSoftware.software_c, BazaSoftware.software_a)), "Modelar");
 		
 	public static void popuniListe() {
 		adresses.add(adress_a);
@@ -47,7 +45,6 @@ public class BazaEmployees{
 	}
 	
 	private BazaEmployees() {
-		generator = 0;
 		
 		initEmployees();
 		
@@ -58,8 +55,8 @@ public class BazaEmployees{
 		this.kolone.add("Date of birth");
 		this.kolone.add("Email");
 		this.kolone.add("Adress");
-		this.kolone.add("Position");
 		this.kolone.add("Software");
+		this.kolone.add("Position");
 	}
 	
 	private void initEmployees() {
@@ -85,10 +82,6 @@ public class BazaEmployees{
 		return this.employees.get(rowIndex);
 	}
 	
-	private long generateId() {
-		return ++generator;
-	}
-	
 	public void addEmployee(Employee e) {
 		this.employees.add(e);
 	}
@@ -102,7 +95,7 @@ public class BazaEmployees{
 		}
 	}
 
-	public void editEmployee(String ime, String prezime, String jmbg, List<String> datumRodjenja, String email, Adress adresa, Software softver, String radnoMesto, String stariJmbg) {
+	public void editEmployee(String ime, String prezime, String jmbg, List<String> datumRodjenja, String email, Adress adresa, List<Software> softver, String radnoMesto, String stariJmbg) {
 		for (Employee employee : employees) {
 			if (employee.getJmbg() == stariJmbg) {
 				employee.setIme(ime);
@@ -134,7 +127,7 @@ public class BazaEmployees{
 		case 5:
 			return employee.getAdresa().toString();
 		case 6:
-			return employee.getSoftver().getName();
+			return conv2StringS(employee.getSoftver());
 		case 7:
 			return employee.getRadnoMesto();
 		default:
@@ -151,5 +144,18 @@ public String conv2String(List<String> datumRodjenja) {
 	    sb.append(". ");
 	}
 	return sb.toString();
+}
+
+public String conv2StringS(List<Software> softwares) {
+	
+	StringBuilder out = new StringBuilder();
+	for (int a = 0; a<softwares.size(); a++) {
+		Software s = softwares.get(a);
+		out.append(s.getName());
+		if(!(a == softwares.size()-1)) {
+		out.append(", ");
+		}
+	 }
+	return out.toString();
 }
 }

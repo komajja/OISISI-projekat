@@ -17,6 +17,13 @@ public class Brush {
 		this.boja = boja;
 	}
 	
+	public Brush(String naziv, String namena, Color boja) {
+		super();
+		this.naziv = naziv;
+		this.namena = namena;
+		this.boja = boja;
+	}
+	
 	public long getId() {		//NOVO
 		return id;
 	}

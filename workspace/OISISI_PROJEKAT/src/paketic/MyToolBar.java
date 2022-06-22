@@ -8,6 +8,8 @@ import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JToolBar;
 import javax.swing.SwingConstants;
+
+import baza.BazaEmployees;
 import kontoleri.ControllerEmployee;
 import kontoleri.ControllerSoftware;
 
@@ -42,7 +44,6 @@ public class MyToolBar extends JToolBar {
 				} else if (selectedTab == 1) {
 					// Softver
 					ControllerSoftware.getInstance().addSoftware();
-					
 			    }
 			}
 		});
@@ -61,21 +62,23 @@ public class MyToolBar extends JToolBar {
 		btnEdit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int selectedTab = MyFrame.getInstance().getTab().getSelectedIndex();
-								
-					int input = JOptionPane.showConfirmDialog(null,
+				int input;
+				
+				if (selectedTab == 0) {
+					if(MyFrame.getInstance().getTableEmployees().getSelectionModel().isSelectionEmpty()) {
+						input = JOptionPane.showConfirmDialog(null,
+							    "Nothing is selected", "CONFIRMATION", 
+							    JOptionPane.PLAIN_MESSAGE, JOptionPane.INFORMATION_MESSAGE, icon);
+					}
+					else ControllerEmployee.getInstance().editEmployee();
+				} else if (selectedTab == 1) {
+					if(MyFrame.getInstance().getTableSoftware().getSelectionModel().isSelectionEmpty()) {
+					input = JOptionPane.showConfirmDialog(null,
 						    "Nothing is selected", "CONFIRMATION", 
 						    JOptionPane.PLAIN_MESSAGE, JOptionPane.INFORMATION_MESSAGE, icon);
-				
-			
-				
-				/*if (selectedTab == 0) {
-					// Employee
-					ControllerEmployee.getInstance().editEmployee();
-				/*} else if (selectedTab == 1) {
-					int input = JOptionPane.showConfirmDialog(null,
-						    "Are you sure you want to proceed?", "CONFIRMATION", 
-						    JOptionPane.OK_OPTION, JOptionPane.INFORMATION_MESSAGE, icon);*/
-			    //}
+					}
+					else ControllerSoftware.getInstance().editSoftware();
+			    }
 			}
 		});
 		
@@ -93,21 +96,23 @@ public class MyToolBar extends JToolBar {
 		btnDelete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int selectedTab = MyFrame.getInstance().getTab().getSelectedIndex();
-								
-					int input = JOptionPane.showConfirmDialog(null,
-						    "Nothing is selected", "CONFIRMATION", 
-						    JOptionPane.PLAIN_MESSAGE, JOptionPane.INFORMATION_MESSAGE, icon);
-				
-			
-				
-				/*if (selectedTab == 0) {
-					// Employee
-					ControllerEmployee.getInstance().editEmployee();
-				/*} else if (selectedTab == 1) {
-					int input = JOptionPane.showConfirmDialog(null,
-						    "Are you sure you want to proceed?", "CONFIRMATION", 
-						    JOptionPane.OK_OPTION, JOptionPane.INFORMATION_MESSAGE, icon);*/
-			    //}
+				int input;
+				if (selectedTab == 0) {
+					if(MyFrame.getInstance().getTableEmployees().getSelectionModel().isSelectionEmpty()) {
+						input = JOptionPane.showConfirmDialog(null,
+							    "Nothing is selected", "CONFIRMATION", 
+							    JOptionPane.PLAIN_MESSAGE, JOptionPane.INFORMATION_MESSAGE, icon);
+					}
+					else ControllerEmployee.getInstance().deleteEmployee(MyFrame.getTableEmployees().getSelectedRow());
+				} else if (selectedTab == 1) {
+					if(MyFrame.getInstance().getTableSoftware().getSelectionModel().isSelectionEmpty()) {
+						input = JOptionPane.showConfirmDialog(null,
+							    "Nothing is selected", "CONFIRMATION", 
+							    JOptionPane.PLAIN_MESSAGE, JOptionPane.INFORMATION_MESSAGE, icon);
+					}
+					else ControllerSoftware.getInstance().deleteSoftware(MyFrame.getTableSoftware().getSelectedRow());
+					}
+
 			}
 		});
 		add(btnDelete);

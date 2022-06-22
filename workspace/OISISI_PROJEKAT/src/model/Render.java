@@ -8,16 +8,25 @@ public class Render {
 	private String naziv;
 	private List<String> materijali;
 	private List<String> kamere;
-	private String svetlo;
+	private List<String> svetla;
 	private List<String> objekti;
 	
-	public Render(long id, String naziv, List<String> materijali, List<String> kamere, String svetlo, List<String> objekti) {
+	public Render(long id, String naziv, List<String> materijali, List<String> kamere, List<String> svetla, List<String> objekti) {
 		super();
 		this.id = id;
 		this.naziv = naziv;
 		this.materijali = materijali;
 		this.kamere = kamere;
-		this.svetlo = svetlo;
+		this.svetla = svetla;
+		this.objekti = objekti;
+	}
+	
+	public Render(String naziv, List<String> materijali, List<String> kamere, List<String> svetla, List<String> objekti) {
+		super();
+		this.naziv = naziv;
+		this.materijali = materijali;
+		this.kamere = kamere;
+		this.svetla = svetla;
 		this.objekti = objekti;
 	}
 	
@@ -53,12 +62,12 @@ public class Render {
 		this.kamere = kamere;
 	}
 	
-	public String getLight() {
-		return svetlo;
+	public List<String> getLight() {
+		return svetla;
 	}
 
-	public void setLight(String svetlo) {
-		this.svetlo = svetlo;
+	public void setLight(List<String> svetlo) {
+		this.svetla = svetlo;
 	}
 	
 	public List<String> getObjects() {
@@ -90,7 +99,13 @@ public class Render {
 			}
 		}
 		sb.append("; ");
-		sb.append(svetlo);
+		for (int a = 0; a<svetla.size(); a++) {
+			String c = svetla.get(a);
+			sb.append(c);
+			if(!(a == svetla.size()-1)) {
+			sb.append(", ");
+			}
+		}
 		sb.append("; ");
 		for (int a = 0; a<objekti.size(); a++) {
 			String o = objekti.get(a);

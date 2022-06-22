@@ -59,24 +59,6 @@ public class MyMenuBar extends JMenuBar {
 		miNew.addSeparator();
 		miNew.add(miNewSoftware);
 		
-		//uvezanost new->softver i radnik 
-		/*miNewEmployee.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
-            	
-            	WindowNewEmployee windowSoftware= new WindowNewEmployee();
-
-            }
-        });*/
-		
-		/*miNewSoftware.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
-            	
-            	WindowNewSoftware windowSoftware= new WindowNewSoftware();
-
-            }
-        });
-		*/
-		
 		JMenu miOpen=new JMenu("Open");
 		icon=new ImageIcon("image/open.png");
 		miOpen.setIcon(icon);
@@ -97,7 +79,6 @@ public class MyMenuBar extends JMenuBar {
             	int selectedTab = MyFrame.getInstance().getTab().getSelectedIndex();
             	if (selectedTab == 1) {
 					// employee
-            		
             		 MyFrame.getInstance().getTab().setSelectedIndex(0);
 				}
             	
@@ -150,6 +131,56 @@ public class MyMenuBar extends JMenuBar {
 				JMenuItem miDelete=new JMenuItem("Delete", new ImageIcon("image/delete.png"));
 				edit.setForeground(ColBraon);
 				miDelete.setForeground(ColCrvena);
+				ImageIcon icon1=new ImageIcon("image/warning.png");
+				miEdit.addActionListener(new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						int selectedTab = MyFrame.getInstance().getTab().getSelectedIndex();
+						int input;
+						
+						if (selectedTab == 0) {
+							if(MyFrame.getInstance().getTableEmployees().getSelectionModel().isSelectionEmpty()) {
+								input = JOptionPane.showConfirmDialog(null,
+									    "Nothing is selected", "CONFIRMATION", 
+									    JOptionPane.PLAIN_MESSAGE, JOptionPane.INFORMATION_MESSAGE, icon1);
+							}
+							else ControllerEmployee.getInstance().editEmployee();
+						} else if (selectedTab == 1) {
+							if(MyFrame.getInstance().getTableSoftware().getSelectionModel().isSelectionEmpty()) {
+							input = JOptionPane.showConfirmDialog(null,
+								    "Nothing is selected", "CONFIRMATION", 
+								    JOptionPane.PLAIN_MESSAGE, JOptionPane.INFORMATION_MESSAGE, icon1);
+							}
+							else ControllerSoftware.getInstance().editSoftware();
+					    }
+					
+					}
+				});
+				
+				miDelete.addActionListener(new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						int selectedTab = MyFrame.getInstance().getTab().getSelectedIndex();
+						int input;
+						if (selectedTab == 0) {
+							if(MyFrame.getInstance().getTableEmployees().getSelectionModel().isSelectionEmpty()) {
+								input = JOptionPane.showConfirmDialog(null,
+									    "Nothing is selected", "CONFIRMATION", 
+									    JOptionPane.PLAIN_MESSAGE, JOptionPane.INFORMATION_MESSAGE, icon1);
+							}
+							else ControllerEmployee.getInstance().deleteEmployee(MyFrame.getTableEmployees().getSelectedRow());
+						} else if (selectedTab == 1) {
+							if(MyFrame.getInstance().getTableSoftware().getSelectionModel().isSelectionEmpty()) {
+								input = JOptionPane.showConfirmDialog(null,
+									    "Nothing is selected", "CONFIRMATION", 
+									    JOptionPane.PLAIN_MESSAGE, JOptionPane.INFORMATION_MESSAGE, icon1);
+							}
+							else ControllerSoftware.getInstance().deleteSoftware(MyFrame.getTableSoftware().getSelectedRow());
+							}
+					}
+				});
 				
 				edit.add(miEdit);
 				edit.addSeparator();

@@ -12,15 +12,20 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
+import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
+
 import baza.BazaEmployees;
 import baza.BazaSoftware;
 import listeneri.MyKeyListener1;
@@ -47,8 +52,8 @@ public class WindowNewEmployee extends JFrame {
 	private JTextField txtAdressStreet;
 	private JTextField txtAdressNum;
 	private JTextField txtAdressCity;
-	JComboBox<String> cb1;
-	JComboBox<String> cb2;
+	JList<String> listaSoftvera;
+	JComboBox<String> CBradnoMesto;
 	private String trenutniJMBG;
 	
 	//BOJE za GUI
@@ -65,6 +70,7 @@ public class WindowNewEmployee extends JFrame {
 		JDialog dijalogEmployee;
 		tip = t;
 		trenutniJMBG = "";
+		ImageIcon icon=new ImageIcon("image/warning.png");
 		//DialogExample() {  
 	        JFrame f= new JFrame();  
 	        dijalogEmployee = new JDialog(f , "Employee", true); 
@@ -341,53 +347,35 @@ public class WindowNewEmployee extends JFrame {
 	        JLabel lblSoftware=new JLabel ("Choose a software:");
 	        lblSoftware.setPreferredSize(dim);
 	        
-	        cb1=new JComboBox<String>();
-	        cb1.setVisible(true);
-	        cb1.setBackground(ColBela);
-	        	        
+	        DefaultListModel<String> model = new DefaultListModel<>();
 	        for (int i = 0; i < BazaSoftware.getInstance().getSoftware().size(); i++) {
-	        	cb1.addItem(BazaSoftware.getInstance().getSoftware().get(i).getName());
+	        	model.addElement(BazaSoftware.getInstance().getSoftware().get(i).getName());
 	        }
-	        
-//	        JCheckBox checkBox1=new JCheckBox("software1");
-//	        JCheckBox checkBox2=new JCheckBox("software2");
-//	        JCheckBox checkBox3=new JCheckBox("software3");
+
+	        listaSoftvera = new JList<String>(model);
+	        listaSoftvera.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+	        listaSoftvera.setFixedCellHeight(15);
+	        listaSoftvera.setFixedCellWidth(200);
+	        listaSoftvera.setVisibleRowCount(4);
+	        JScrollPane listScroll = new JScrollPane(listaSoftvera);
+	        listaSoftvera.setBackground(ColBela);
 	        
 	        panPanel.add(lblSoftware);
-	        panPanel.add(cb1);
-//	        panPanel.add(checkBox1);
-//	        panPanel.add(checkBox2);
-//	        panPanel.add(checkBox3);
-//	        panPanel.add(Box.createRigidArea(new Dimension(300,0)));
-	        
+	        panPanel.add(listScroll);
 	        
 	        //RADNO MESTO dropdown
 	        JLabel lblJobs=new JLabel ("Choose a job:");
 	        lblJobs.setPreferredSize(dim);
 	        
-	        String[] poslovi = { "Rigger","Animator", "3D Generalist","Illustrator","Texture Artist","3D Modeling"};
-	        cb2 = new JComboBox<String>(poslovi);
-	        cb2.setVisible(true);
-	        cb2.setBackground(ColBela);
-//	        JRadioButton radBtn1 = new JRadioButton("Job 1");
-//			JRadioButton radBtn2 = new JRadioButton("Job 2");
-			
-//			ButtonGroup btnGroupJob = new ButtonGroup();
-//			btnGroupJob.add(radBtn1);
-//			btnGroupJob.add(radBtn2);
+	        String[] poslovi = { "Rigger","Animator", "Dizajner", "3D Generalist", "Menadzer", "Illustrator", "Modelar", "Texture Artist"};
+	        CBradnoMesto = new JComboBox<String>(poslovi);
+	        CBradnoMesto.setVisible(true);
+	        CBradnoMesto.setBackground(ColBela);
 			
 			panPanel.add(lblJobs);
-	        panPanel.add(cb2);
-//			panPanel.add(radBtn1);
-//			panPanel.add(radBtn2);
-	        //
-	        
+	        panPanel.add(CBradnoMesto);
 	        panCenter.add(panPanel);
 	        
-	        //panCenter.add(Box.createVerticalStrut(25));  
-	        
-	        
-	       // add(panCenter,);
 	        
 	        int rowSelectedIndex = MyFrame.getTableEmployees().getSelectedRow();
 	        if (tip == 'i' && rowSelectedIndex >= 0) {
@@ -404,6 +392,8 @@ public class WindowNewEmployee extends JFrame {
 				txtAdressStreet.setText(selectedEmployee.getAdresa().getUlica());
 				txtAdressNum.setText(selectedEmployee.getAdresa().getBroj());
 				txtAdressCity.setText(selectedEmployee.getAdresa().getGrad());
+				listaSoftvera.setSelectedIndices(findIndicesInList(BazaSoftware.getInstance().getSoftware(),selectedEmployee.getSoftver()));
+				CBradnoMesto.setSelectedItem(selectedEmployee.getRadnoMesto());
 				trenutniJMBG = selectedEmployee.getJmbg();
 	        }
 	        
@@ -427,8 +417,12 @@ public class WindowNewEmployee extends JFrame {
 						datumRodjenja.add(txtYear.getText().trim());
 						String email = txtEmail.getText().trim();
 						Adress adresaStanovanja = new Adress(txtAdressStreet.getText().trim(), txtAdressNum.getText().trim(), txtAdressCity.getText().trim());
-						Software softver = BazaSoftware.getInstance().getRow(cb1.getSelectedIndex());
-						String radnoMesto = (String) (cb2.getSelectedItem());
+						List<Software> softver = new ArrayList<Software>();
+						int[] indeksi = listaSoftvera.getSelectedIndices();
+						for (int i = 0; i < indeksi.length; i++) {
+							softver.add(BazaSoftware.getInstance().getSoftware().get(indeksi[i]));
+				        }
+						String radnoMesto =(String) CBradnoMesto.getSelectedItem();
 						
 						if (tip == 'u') {
 							Employee nov = new Employee(ime, prezime, jmbg, datumRodjenja, email,
@@ -444,12 +438,12 @@ public class WindowNewEmployee extends JFrame {
 
 						MyFrame.getInstance().updateDisplay();
 						dijalogEmployee.dispose();
-				    }/////////////!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-					ImageIcon icon=new ImageIcon("image/warning.png");
-					int input = JOptionPane.showConfirmDialog(null,
-						    "Are you sure you want to proceed?", "CONFIRMATION", 
-						    JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, icon);
-					///////////////////!!!!!!!!!!!!!!!!!!!!!!!
+				    }
+					else {
+						int input = JOptionPane.showConfirmDialog(null,
+							    "JMBG must be unique!", "CONFIRMATION", 
+							    JOptionPane.PLAIN_MESSAGE, JOptionPane.INFORMATION_MESSAGE, icon);
+						}
 				}
 			});
 			
@@ -502,6 +496,18 @@ public class WindowNewEmployee extends JFrame {
 				return true;
 		}
 		return false;
+	}
+	
+	private int[] findIndicesInList(List<Software> outer, List<Software> inner){
+		int[] indices = new int[inner.size()];
+			for(int i = 0; i < outer.size(); i++) {
+				for (int j = 0; j < inner.size(); j++) {
+					if (inner.get(j).equals(outer.get(i))) {
+						indices[j]=i;
+		    	}
+			}
+		}
+		return indices;
 	}
 
 }

@@ -18,6 +18,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
+import javax.swing.ListSelectionModel;
 import javax.swing.table.TableCellRenderer;
 import baza.BazaSoftware;
 
@@ -94,6 +95,7 @@ public class MyFrame extends JFrame{
 	panel.add(tabbedPane, BorderLayout.CENTER);
 	
 	TableEmployees = new JTable(new AbstractTableModelEmployee());
+	TableEmployees.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 	JScrollPane scrollPaneEmployee = new JScrollPane(TableEmployees);
 	tabbedPane.addTab("Employees", scrollPaneEmployee);
 	
@@ -126,19 +128,12 @@ public class MyFrame extends JFrame{
         }
 	};
 	
+	TableSoftware.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 	JScrollPane scrollPaneSoftware = new JScrollPane(TableSoftware);
 	tabbedPane.addTab("Software", scrollPaneSoftware);
 	
 	TableSoftware.setBackground(ColBela);
 	TableSoftware.setSelectionBackground(ColNaran);
-	
-//	ArrayList<String> boje = new ArrayList<String>();
-//    for(int i = 0; i<Colours.size(); i ++) {
-//    		boje.add(String.valueOf(Colours.get(i).getRed())+","+String.valueOf(Colours.get(i).getGreen())+","+String.valueOf(Colours.get(i).getBlue()));
-//    }
-	
-	//String boje = (String.valueOf(Colours.get(1).getRed())+","+String.valueOf(Colours.get(1).getGreen())+","+String.valueOf(Colours.get(1).getBlue()));
-    //String html = getHtml(Colours);
 	
 	}
 	
@@ -149,19 +144,18 @@ public static JTable getTableEmployees() {
 public static JTable getTableSoftware() {
 	return TableSoftware;
 }
-	
-public void createTab(String tablename, JScrollPane pane) {
-	tabbedPane.addTab("Tab #", pane);
-	}
 
 public JTabbedPane getTab() {
 	return tabbedPane;
 }
 
 public void updateDisplay() {
-	AbstractTableModelEmployee model = (AbstractTableModelEmployee) TableEmployees.getModel();
+	AbstractTableModelEmployee model1 = (AbstractTableModelEmployee) TableEmployees.getModel();
 	// azuriranje modela tabele, kao i njenog prikaza
-	model.fireTableDataChanged();
+	model1.fireTableDataChanged();
+	AbstractTableModelSoftware model2 = (AbstractTableModelSoftware) TableSoftware.getModel();
+	// azuriranje modela tabele, kao i njenog prikaza
+	model2.fireTableDataChanged();
 	validate();
 }
 
