@@ -7,8 +7,7 @@ public class MyApp {
 	public static void main(String[] args) {
 
 		frame = MyFrame.getInstance();
-//		WindowNewSoftware windowSoftware= new WindowNewSoftware();
-//		WindowNewEmployee2 winareyousure = new WindowNewEmployee2();
+
 	}
 	
 }

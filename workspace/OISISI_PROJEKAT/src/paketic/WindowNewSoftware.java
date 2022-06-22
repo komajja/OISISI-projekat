@@ -3,10 +3,14 @@ package paketic;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JColorChooser;
@@ -14,6 +18,7 @@ import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
@@ -179,8 +184,39 @@ public WindowNewSoftware(){
 			panBottom.add(Box.createGlue());
 			panBottom.add(btnOk);
 			panBottom.add(Box.createHorizontalStrut(10));
+			
 			panBottom.add(btnCancel);
+			btnCancel.addActionListener(new ActionListener() {
+	            public void actionPerformed(ActionEvent arg0) {
+	            	
+	            	ImageIcon icon=new ImageIcon("image/warning.png");
 					
+	        		int input = JOptionPane.showConfirmDialog(null,
+	        					    "Are you sure you want to proceed?", "CONFIRMATION", 
+	        					    JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, icon);
+	        		// 0=yes, 1=no
+	        		System.out.println(input);
+	        		if (input==0)
+	            	dijalogSoftware.dispatchEvent(new WindowEvent(f, WindowEvent.WINDOW_CLOSING));
+	                 }
+	             });
+			
+			btnOk.addActionListener(new ActionListener() {
+	            public void actionPerformed(ActionEvent arg0) {
+	            	
+	            	ImageIcon icon=new ImageIcon("image/warning.png");
+					
+	        		int input = JOptionPane.showConfirmDialog(null,
+	        					    "Are you sure you want to proceed?", "CONFIRMATION", 
+	        					    JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, icon);
+	        		// 0=yes, 1=no
+	        		System.out.println(input);
+	        		if (input==0)
+	                	
+	            	dijalogSoftware.dispatchEvent(new WindowEvent(f, WindowEvent.WINDOW_CLOSING));
+	                 }
+	             });
+			
 			panBottom.add(Box.createRigidArea(new Dimension(30,50))); //mozda jos cackati velicine
 			
 	        
